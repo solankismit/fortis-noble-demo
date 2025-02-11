@@ -4,15 +4,17 @@
 
 @layer base {
   html {
-    font-size: 62.5%; /* This makes 1rem = 10px */
+    font-size: 62.5%;
+    /* This makes 1rem = 10px */
   }
-  
+
   body {
-    font-size: 1.6rem; /* This sets the default text size to 16px */
+    font-size: 1.6rem;
+    /* This sets the default text size to 16px */
   }
 }
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -28,4 +30,4 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-itc-caslon);
-}
+} */
