@@ -1,8 +1,5 @@
-import Link from "next/link"
+import Link from "next/link";
 
 export function Footer() {
-  return (
-    <footer >
-   </footer>
-  )
-} 
+  return <footer></footer>;
+}

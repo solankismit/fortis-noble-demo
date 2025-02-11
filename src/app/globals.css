@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-size: 62.5%; /* This makes 1rem = 10px */
+  }
+  
+  body {
+    font-size: 1.6rem; /* This sets the default text size to 16px */
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

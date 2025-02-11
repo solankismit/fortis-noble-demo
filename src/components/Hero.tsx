@@ -1,0 +1,77 @@
+import { cn } from "@/lib/utils";
+import { Banner } from "./Banner";
+
+interface HeroProps {
+  videoSrc?: string;
+  imageSrc?: string;
+  title: string;
+  description?: string;
+  button?: {
+    text: string;
+    href: string;
+    target?: string;
+  };
+  className?: string;
+}
+
+export function Hero({
+  videoSrc,
+  imageSrc,
+  title,
+  description,
+  button,
+  className,
+}: HeroProps) {
+  return (
+    <section
+      className={cn(
+        "relative h-screen w-full overflow-hidden",
+        "before:content-[''] before:absolute before:left-1/2 before:-ml-[860px] before:top-0 before:w-full before:max-w-[1720px] before:h-[1px] before:bg-[#d8d8d8]",
+        "2xl:before:left-[100px] 2xl:before:ml-0 2xl:before:w-[calc(100%-200px)]",
+        "xl:before:left-[min(50px,7vw)] xl:before:w-[calc(100%-min(50px,7vw)*2)]",
+        className
+      )}
+    >
+      <div className="relative h-full">
+        {/* Video or Image - Lower z-index */}
+        <div className="absolute inset-0 z-0">
+          {videoSrc ? (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute top-0 left-0 w-full h-full object-cover"
+            >
+              <source src={videoSrc} type="video/mp4" />
+              <p>Your browser doesn't support video playback.</p>
+            </video>
+          ) : imageSrc ? (
+            <img
+              src={imageSrc}
+              alt={title}
+              className="absolute top-0 left-0 w-full h-full object-cover"
+            />
+          ) : null}
+        </div>
+
+        {/* Gradients - Middle z-index */}
+        <div className="absolute inset-0 z-10 pointer-events-none">
+          {/* Top gradient overlay */}
+          <div className="absolute top-0 left-0 w-full h-[120px] bg-gradient-to-b from-black/60 via-black/30 to-transparent" />
+
+          {/* Bottom gradient overlay */}
+          <div className="absolute bottom-0 left-0 w-full h-[50vh] bg-gradient-to-t from-black/90 to-transparent" />
+        </div>
+
+        {/* Banner Component - Highest z-index */}
+        <Banner
+          title={title}
+          description={description}
+          button={button}
+          className="z-20"
+        />
+      </div>
+    </section>
+  );
+}
