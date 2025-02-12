@@ -160,8 +160,8 @@ const navItems: NavItem[] = [
 ];
 
 const languages: LanguageItem[] = [
-  { code: "EN", active: true },
-  { code: "SE", active: false },
+  { code: "English", active: true },
+  { code: "Svenska", active: false },
 ];
 
 export default function Header({ onMenuToggle }: HeaderProps) {
@@ -238,10 +238,10 @@ export default function Header({ onMenuToggle }: HeaderProps) {
                 <button
                   className={cn(
                     "text-[1.6rem] font-monument-grotesk transition-colors",
-                    "text-white"
+                    "text-white/60 hover:text-white"
                   )}
                 >
-                  EN
+                  {languages.find((lang) => lang.active)?.code}
                 </button>
               </div>
 

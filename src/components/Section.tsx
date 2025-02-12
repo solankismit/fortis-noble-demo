@@ -2,13 +2,13 @@ import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
 interface SectionProps {
-  children: ReactNode
-  className?: string
-  container?: boolean
-  borderTop?: boolean
-  borderBottom?: boolean
-  noPadding?: boolean
-  title: string
+  children: ReactNode;
+  className?: string;
+  container?: boolean;
+  borderTop?: boolean;
+  borderBottom?: boolean;
+  noPadding?: boolean;
+  title?: string;
 }
 
 export function Section({
@@ -26,7 +26,7 @@ export function Section({
       {container ? (
         <div
           className={cn(
-            "container mx-auto px-[min(50px,7vw)] md:px-[50px] max-w-[1920px]",
+            "container mx-auto px-[min(50px,7vw)] 2xl:px-[100px] max-w-[1920px]",
             borderTop && "border-t",
             borderBottom && "border-b"
           )}

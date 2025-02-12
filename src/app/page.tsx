@@ -22,7 +22,7 @@ export default function Home() {
       >
         <Hero
           videoSrc="video.mp4"
-          title="Välkommen till Mannheimer Swartling"
+          title="Welcome to Mannheimer Swartling"
           button={{
             text: "Om byrån",
             href: "/om-byran",
@@ -50,7 +50,8 @@ export default function Home() {
         </Section>
         <Hero
           imageSrc="image.jpg"
-          title="Välkommen till Mannheimer Swartling"
+          title="International"
+          description="Mannheimer Swartling is a leading international law firm with a strong focus on the Nordic region. We are a full-service law firm with a strong focus on the Nordic region."
           button={{
             text: "Om byrån",
             href: "/om-byran",

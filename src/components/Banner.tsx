@@ -16,12 +16,15 @@ interface BannerProps {
 
 export function Banner({ title, description, button, className }: BannerProps) {
   return (
-    <Section className={cn("absolute bottom-0 left-0 w-full", className)}>
+    <Section
+      className={cn("absolute bottom-0 left-0 w-full", className)}
+      noPadding
+    >
       <div
         className={cn(
           "w-[calc(100%-min(50px,7vw)*2)]",
           "2xl:w-[50%]",
-          "mb-[min(50px,7vw)] 2xl:mb-[100px]"
+          "mb-[calc(min(50px,7vw)*2)] xl:mb-[50px] 2xl:mb-[100px]"
         )}
       >
         <h2
