@@ -2,12 +2,13 @@ import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
 interface SectionProps {
-  children: ReactNode;
-  className?: string;
-  container?: boolean;
-  borderTop?: boolean;
-  borderBottom?: boolean;
-  noPadding?: boolean;
+  children: ReactNode
+  className?: string
+  container?: boolean
+  borderTop?: boolean
+  borderBottom?: boolean
+  noPadding?: boolean
+  title: string
 }
 
 export function Section({

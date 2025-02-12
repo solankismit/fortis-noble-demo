@@ -5,6 +5,9 @@ import { Section } from "@/components/Section";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { Hero } from "@/components/Hero";
+import News from "@/components/News";
+import Expertise from "@/components/Expertise";
+import EmployeesSection from "@/components/EmployeeSection";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,11 +29,24 @@ export default function Home() {
             target: "_self",
           }}
         />
-        <Section className="bg-red-500 h-[100vh]">
-          <h1>Hello World</h1>
+
+        <div className='pt-24'>
+          <hr />
+        </div>
+        <Section title='News'>
+          <News />
         </Section>
-        <Section className="bg-red-500 h-[100vh]">
-          <h1>Hello World</h1>
+        <div className='pt-24'>
+          <hr />
+        </div>
+        <Section title='Expertise'>
+          <Expertise />
+        </Section>
+        <div>
+          <hr />
+        </div>
+        <Section title='Employee'>
+          <EmployeesSection />
         </Section>
         <Hero
           imageSrc="image.jpg"
@@ -42,6 +58,7 @@ export default function Home() {
           }}
           className="mb-[100vh]"
         />
+
       </main>
       <Footer />
     </>

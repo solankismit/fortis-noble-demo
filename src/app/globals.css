@@ -4,11 +4,13 @@
 
 @layer base {
   html {
-    font-size: 62.5%; /* This makes 1rem = 10px */
+    font-size: 62.5%;
+    /* This makes 1rem = 10px */
   }
-  
+
   body {
-    font-size: 1.6rem; /* This sets the default text size to 16px */
+    font-size: 1.6rem;
+    /* This sets the default text size to 16px */
   }
 }
 
@@ -19,8 +21,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000;
+    --foreground: #fff;
   }
 }
 
