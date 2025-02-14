@@ -17,7 +17,7 @@ const Expertise = () => {
       </div>
       <div className="flex justify-center">
         <Button
-          className="mt-[min(50px, 7vw)] md:mt-[47px] 2xl:mt-[70px]"
+          className="mt-[min(50px,7vw)] md:mt-[47px] 2xl:mt-[70px]"
           href="/expertise"
         >
           Our advisory services

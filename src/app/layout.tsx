@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mannheimer Swartling",
-  description: "Welcome to Mannheimer Swartling",
+  title: "Fortis Noble",
+  description: "Welcome to Fortis Noble",
 };
 
 export default function RootLayout({

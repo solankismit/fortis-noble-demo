@@ -25,7 +25,7 @@ export function Footer({ className }: FooterProps) {
       <Section>
         <div className="relative w-full py-[40px] xl:pb-[20px] md:pt-[min(50px,7vw)] md:pb-[15px]">
           <Newsletter
-            title="More Mannheimer Swartling?"
+            title="More Fortis Noble?"
             description="Keep up to date with our newsletters."
             buttonText="Subscribe"
             buttonHref="/newsletter"
@@ -34,7 +34,7 @@ export function Footer({ className }: FooterProps) {
           <OfficeLocations offices={officeLocations} />
 
           <CompanyInfo
-            companyName="2008–2025 © Mannheimer Swartling Advokatbyrå AB with registered office in Stockholm"
+            companyName="2008–2025 © Fortis Noble Advokatbyrå AB with registered office in Stockholm"
             orgNumber="Organisation number: 556399–4499"
             vatNumber="Momsnummer (VAT no): SE556399449901"
           />

@@ -12,7 +12,7 @@
 //         {/* Newsletter Section */}
 //         <div className="text-center">
 //           <h2 className="text-4xl lg:text-6xl mb-4 font-serif">
-//             More Mannheimer Swartling?
+//             More Fortis Noble?
 //           </h2>
 //           <p className="text-xl mb-14">Keep up to date with our newsletters.</p>
 //           <Link
@@ -53,7 +53,7 @@
 //         {/* Company Info */}
 //         <div className="text-center mt-16">
 //           <p className="text-sm tracking-wide">
-//             2008–2025 © Mannheimer Swartling Advokatbyrå AB with registered
+//             2008–2025 © Fortis Noble Advokatbyrå AB with registered
 //             office in Stockholm
 //           </p>
 //           <p className="text-sm tracking-wide mt-2">

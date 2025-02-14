@@ -73,7 +73,7 @@ const News = () => {
     },
     {
       image: "/assets/corporate-stockholm.jpg",
-      title: "Mannheimer Swartling Annual Publication 2025",
+      title: "Fortis Noble Annual Publication 2025",
       date: "February 4, 2025",
     },
     {

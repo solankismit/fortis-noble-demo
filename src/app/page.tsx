@@ -22,7 +22,7 @@ export default function Home() {
       >
         <Hero
           videoSrc="video.mp4"
-          title="Welcome to Mannheimer Swartling"
+          title="Welcome to Fortis Noble"
           button={{
             text: "Om byrån",
             href: "/om-byran",
@@ -41,7 +41,7 @@ export default function Home() {
         <Hero
           imageSrc="image.jpg"
           title="International"
-          description="Mannheimer Swartling is a leading international law firm with a strong focus on the Nordic region. We are a full-service law firm with a strong focus on the Nordic region."
+          description="Fortis Noble is a leading international law firm with a strong focus on the Nordic region. We are a full-service law firm with a strong focus on the Nordic region."
           button={{
             text: "Om byrån",
             href: "/om-byran",
