@@ -173,6 +173,10 @@ export default function Header({ onMenuToggle }: HeaderProps) {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (isOpen) {
+        setIsScrollingUp(true);
+        return;
+      }
       const currentScrollY = window.scrollY;
 
       // Check if scrolled
@@ -185,7 +189,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, isOpen]);
 
   const toggleMenu = (state: boolean) => {
     setIsOpen(state);
