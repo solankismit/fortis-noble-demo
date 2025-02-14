@@ -205,7 +205,10 @@ export default function Header({ onMenuToggle }: HeaderProps) {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="z-10">
-              <Link href="/" className="font-bold text-2xl text-white z-10">
+              <Link
+                href="/"
+                className="font-bold text-2xl text-white z-10 leading-[1.07] block isolate text-[1.6rem] xl:text-[2rem] xl:leading-[1.07] 2xl:text-[2.5rem]"
+              >
                 FORTIS NOBLE
               </Link>
             </div>
@@ -225,7 +228,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
               </nav>
 
               {/* Language Switcher - Always visible */}
-              <div className="flex items-center gap-[20px] ml-8 z-[1000]">
+              <div className="hidden xl:flex items-center gap-[20px] ml-8 z-[1000]">
                 <button
                   className={cn(
                     "text-[1.6rem] font-monument-grotesk transition-colors",

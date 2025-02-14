@@ -1,11 +1,12 @@
 import React from "react";
+import { Button } from "./Button";
 
 const Expertise = () => {
   return (
     <>
-      <div className="grid grid-cols-12 max-w-[1200px] mx-auto px-[min(50px,7vw)] 2xl:px-[100px] place-items-center">
-        <div className="col-start-3 col-span-8">
-          <p className="font-serif text-lg md:text-xl lg:text-2xl leading-6 md:leading-7 lg:leading-8 block  isolate">
+      <div className="grid grid-cols-12  mx-auto gap-[min(50px,7vw)]">
+        <div className="col-start-1 col-span-12   min-[1200px]:col-start-3 min-[1200px]:col-span-8">
+          <p className="font-serif block isolate">
             With the combined knowledge of our renowned lawyers in all areas of
             business law, we quickly mobilize the right expertise and experience
             for each assignment. We are organized into groups focused on
@@ -15,9 +16,12 @@ const Expertise = () => {
         </div>
       </div>
       <div className="flex justify-center">
-        <button className="text-gray-600 font-light text-center border border-gray-400 mt-6 md:mt-7 lg:mt-9 mb-5 px-6 md:px-8 lg:px-10 py-3 md:py-3.5 lg:py-4 text-sm md:text-base lg:text-lg hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer">
+        <Button
+          className="mt-[min(50px, 7vw)] md:mt-[47px] 2xl:mt-[70px]"
+          href="/expertise"
+        >
           Our advisory services
-        </button>
+        </Button>
       </div>
     </>
   );

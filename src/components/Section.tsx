@@ -31,19 +31,25 @@ export function Section({
       {container ? (
         <div
           className={cn(
-            "container mx-auto px-[min(50px,7vw)] 2xl:px-[100px] max-w-[1920px]",
-            !noPadding &&
-              "py-[calc(min(50px,7vw)*2)] md:py-[98px] 2xl:py-[122px]",
-            borderTop && "border-t",
-            borderBottom && "border-b"
+            "container mx-auto px-[min(50px,7vw)] 2xl:px-[100px] max-w-[1920px]"
           )}
         >
-          {title && (
-            <h2 className="text-center text-black mb-[calc(min(50px,7vw))] md:mb-[47px] 2xl:mb-[70px] mx-auto">
-              {title}
-            </h2>
-          )}
-          {children}
+          <div
+            className={cn(
+              " border-[#d8d8d8]",
+              borderTop && "border-t",
+              borderBottom && "border-b",
+              !noPadding &&
+                "py-[calc(min(50px,7vw)*2)] md:py-[98px] 2xl:py-[122px]"
+            )}
+          >
+            {title && (
+              <h2 className="text-center text-black mb-[calc(min(50px,7vw))] md:mb-[47px] 2xl:mb-[70px] mx-auto">
+                {title}
+              </h2>
+            )}
+            {children}
+          </div>
         </div>
       ) : (
         children

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Button } from "./Button";
+import Link from "next/link";
 
 interface NewsCardProps {
   image: string;
@@ -10,28 +11,40 @@ interface NewsCardProps {
 }
 
 const NewsCard = ({ image, title, date, categories }: NewsCardProps) => (
-  <div className="bg-white  overflow-hidden transition-shadow duration-300 flex-1 min-w-[250px] group">
-    <img src={image} alt="News" className="group-hover:opacity-50" />
-    <div className="p-6">
-      <h4 className="text-2xl font-serif font-light group-hover:text-gray-500">
-        {title}
-      </h4>
-      {categories && categories.length > 0 && (
-        <ul className="list-none mt-1 flex flex-row flex-wrap gap-1">
-          {categories.map((category, index) => (
-            <li
+  <div className="bg-white  overflow-hidden flex-1 min-w-[250px] ">
+    <div className="group cursor-pointer">
+      <Link href={`#`}>
+        <img
+          src={image}
+          alt="News"
+          className="group-hover:opacity-50 transition-all duration-300"
+        />
+        <h4 className="font-serif font-light group-hover:text-[#999999] transition-all duration-300 pt-[32px]">
+          {title}
+        </h4>
+      </Link>
+    </div>
+    {categories && categories.length > 0 && (
+      <ul className="list-none mt-[10px] md:mt-[12px] xl:mt-[18px] 2xl:mt-[20px] flex flex-row flex-wrap ">
+        {categories.map((category, index) => (
+          <li
+            key={index}
+            className="inline-block mr-[3.2px] md:mr-[12px] mb-[2px] md:mb-[6px]"
+          >
+            <Link
+              href={`#`}
               key={index}
-              className="border-b border-gray-500 text-gray-500 inline font-sans text-xs font-normal tracking-widest uppercase"
+              className="border-b border-[#999999] hover:border-transparent transition-all duration-300 text-[#999999] font-sans text-[1.2rem] md:text-[1.3rem] font-normal tracking-widest uppercase"
             >
               {category}
-            </li>
-          ))}
-        </ul>
-      )}
-      <p className="text-gray-500 inline font-sans text-xs font-normal tracking-widest uppercase">
-        {date}
-      </p>
-    </div>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    )}
+    <p className="text-[#999999]  font-sans text-[1.2rem] md:text-[1.3rem] font-normal tracking-widest uppercase">
+      {date}
+    </p>
   </div>
 );
 
@@ -75,19 +88,23 @@ const News = () => {
   return (
     <>
       <div>
-        <div className="flex flex-wrap gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[min(50px,7vw)]">
           {newsItems.map((item, index) => (
-            <NewsCard
-              key={index}
-              image={item.image}
-              title={item.title}
-              date={item.date}
-              categories={item.categories}
-            />
+            <div key={index} className="relative">
+              <NewsCard
+                image={item.image}
+                title={item.title}
+                date={item.date}
+                categories={item.categories}
+              />
+              {index < newsItems.length - 1 && (
+                <div className="hidden xl:block absolute right-[-25px] top-0 h-full w-[1px] bg-[#d8d8d8]" />
+              )}
+            </div>
           ))}
         </div>
-        <div className="flex justify-center mt-9">
-          <Button href="/news">See more news</Button>
+        <div className="flex justify-center mt-[47px] 2xl:mt-[60px]">
+          <Button href="/news">News</Button>
         </div>
       </div>
     </>

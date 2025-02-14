@@ -50,12 +50,12 @@ export default function Home() {
           className="mb-[100vh]"
         />
       </main>
-      {/* <Footer
+      <Footer
         className={cn(
           "transition-transform duration-300 ease-in-out",
           isMenuOpen && "-translate-x-full xl:-translate-x-[min(50%,960px)]"
         )}
-      /> */}
+      />
     </>
   );
 }
