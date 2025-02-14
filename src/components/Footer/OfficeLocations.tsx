@@ -26,7 +26,7 @@ export function OfficeLocations({ offices }: OfficeLocationsProps) {
       >
         {offices.map((office, index) => (
           <li
-            key={office.country}
+            key={index}
             className={cn(
               "menu-item relative leading-[1.5] md:leading-[1.15]",
               "border-r border-[#d8d8d8]",

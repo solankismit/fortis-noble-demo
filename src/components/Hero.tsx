@@ -38,7 +38,7 @@ export function Hero({
               className="absolute top-0 left-0 w-full h-full object-cover"
             >
               <source src={videoSrc} type="video/mp4" />
-              <p>Your browser doesn't support video playback.</p>
+              <p>Your browser does not support video playback.</p>
             </video>
           ) : imageSrc ? (
             <img
