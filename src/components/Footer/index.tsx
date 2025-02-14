@@ -22,7 +22,7 @@ export function Footer({ className }: FooterProps) {
         className
       )}
     >
-      <Section>
+      <Section noPadding>
         <div className="relative w-full py-[40px] xl:pb-[20px] md:pt-[min(50px,7vw)] md:pb-[15px]">
           <Newsletter
             title="More Fortis Noble?"
@@ -38,7 +38,7 @@ export function Footer({ className }: FooterProps) {
             orgNumber="Organisation number: 556399–4499"
             vatNumber="Momsnummer (VAT no): SE556399449901"
           />
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-center items-center">
             <nav className="mt-[calc(min(1em,7vw))]">
               <ul className="flex flex-wrap justify-center">
                 {legalLinks.map((link) => (
@@ -59,9 +59,9 @@ export function Footer({ className }: FooterProps) {
             </nav>
 
             <ul
-              className="absolute bottom-[40px] right-[100px] flex gap-[10px]
-            xl:right-[50px] xl:bottom-[20px]
-            md:static md:justify-center md:mt-[min(50px,7vw)]"
+              className="absolute bottom-[40px] right-[0px] flex gap-[10px]
+            xl:bottom-[20px]  md:bottom-[15px]
+            "
             >
               {socialLinks.map((link) => (
                 <li key={link.platform}>

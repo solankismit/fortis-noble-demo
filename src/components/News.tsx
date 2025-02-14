@@ -98,7 +98,15 @@ const News = () => {
                 categories={item.categories}
               />
               {index < newsItems.length - 1 && (
-                <div className="hidden xl:block absolute right-[-25px] top-0 h-full w-[1px] bg-[#d8d8d8]" />
+                <>
+                  {/* Show divider for xl (4 columns) */}
+                  <div className="hidden xl:block absolute right-[-25px] top-0 h-full w-[1px] bg-[#d8d8d8]" />
+                  
+                  {/* Show divider for md (2 columns) except after every 2nd item */}
+                  {index % 2 !== 1 && (
+                    <div className="hidden md:block xl:hidden absolute right-[-25px] top-0 h-full w-[1px] bg-[#d8d8d8]" />
+                  )}
+                </>
               )}
             </div>
           ))}
