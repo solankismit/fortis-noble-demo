@@ -198,7 +198,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
         className={cn(
           "fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent",
           isScrolled && "",
-          isScrollingUp ? "translate-y-0" : "-translate-y-full"
+          isScrollingUp || isOpen ? "translate-y-0" : "-translate-y-full"
         )}
       >
         <div className="px-[min(50px,7vw)] 2xl:px-[100px] pt-[20px] 2xl:pt-[39px]">

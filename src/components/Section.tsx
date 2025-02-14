@@ -18,19 +18,31 @@ export function Section({
   borderTop = false,
   borderBottom = false,
   noPadding = false,
+  title,
 }: SectionProps) {
   return (
     <section
-      className={cn("relative", !noPadding && "py-16 md:py-24", className)}
+      className={cn(
+        "relative",
+
+        className
+      )}
     >
       {container ? (
         <div
           className={cn(
             "container mx-auto px-[min(50px,7vw)] 2xl:px-[100px] max-w-[1920px]",
+            !noPadding &&
+              "py-[calc(min(50px,7vw)*2)] md:py-[98px] 2xl:py-[122px]",
             borderTop && "border-t",
             borderBottom && "border-b"
           )}
         >
+          {title && (
+            <h2 className="text-center text-black mb-[calc(min(50px,7vw))] md:mb-[47px] 2xl:mb-[70px] mx-auto">
+              {title}
+            </h2>
+          )}
           {children}
         </div>
       ) : (

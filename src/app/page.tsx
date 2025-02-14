@@ -1,5 +1,5 @@
 "use client";
-import { Footer } from "@/components/Footer";
+import { Footer } from "@/components/Footer/index";
 import Header from "@/components/Header";
 import { Section } from "@/components/Section";
 import { cn } from "@/lib/utils";
@@ -16,7 +16,7 @@ export default function Home() {
       <Header onMenuToggle={setIsMenuOpen} />
       <main
         className={cn(
-          "transition-transform duration-300 ease-in-out",
+          "transition-transform duration-300 ease-in-out bg-white text-black",
           isMenuOpen && "-translate-x-full xl:-translate-x-[min(50%,960px)]"
         )}
       >
@@ -29,23 +29,13 @@ export default function Home() {
             target: "_self",
           }}
         />
-
-        <div className='pt-24'>
-          <hr />
-        </div>
-        <Section title='News'>
+        <Section title="News">
           <News />
         </Section>
-        <div className='pt-24'>
-          <hr />
-        </div>
-        <Section title='Expertise'>
+        <Section title="Expertise" borderTop>
           <Expertise />
         </Section>
-        <div>
-          <hr />
-        </div>
-        <Section title='Employee'>
+        <Section borderTop>
           <EmployeesSection />
         </Section>
         <Hero
@@ -59,9 +49,13 @@ export default function Home() {
           }}
           className="mb-[100vh]"
         />
-
       </main>
-      <Footer />
+      {/* <Footer
+        className={cn(
+          "transition-transform duration-300 ease-in-out",
+          isMenuOpen && "-translate-x-full xl:-translate-x-[min(50%,960px)]"
+        )}
+      /> */}
     </>
   );
 }
