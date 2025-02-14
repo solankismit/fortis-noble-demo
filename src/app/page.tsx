@@ -47,6 +47,7 @@ export default function Home() {
             href: "/om-byran",
             target: "_self",
           }}
+          noTopShadow
           className="mb-[100vh]"
         />
       </main>

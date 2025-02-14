@@ -12,6 +12,7 @@ interface HeroProps {
     target?: string;
   };
   className?: string;
+  noTopShadow?: boolean;
 }
 
 export function Hero({
@@ -21,6 +22,7 @@ export function Hero({
   description,
   button,
   className,
+  noTopShadow = false,
 }: HeroProps) {
   return (
     <section
@@ -52,7 +54,9 @@ export function Hero({
         {/* Gradients - Middle z-index */}
         <div className="absolute inset-0 z-10 pointer-events-none">
           {/* Top gradient overlay */}
-          <div className="absolute top-0 left-0 w-full h-[120px] bg-gradient-to-b from-black/60 via-black/30 to-transparent" />
+          {!noTopShadow && (
+            <div className="absolute top-0 left-0 w-full h-[120px] bg-gradient-to-b from-black/60 via-black/30 to-transparent" />
+          )}
 
           {/* Bottom gradient overlay */}
           <div className="absolute bottom-0 left-0 w-full h-[50vh] bg-gradient-to-t from-black/90 to-transparent" />
