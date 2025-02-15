@@ -369,7 +369,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
         {/* Mobile Menu */}
         <div
           className={cn(
-            "fixed top-0 right-0 h-screen bg-black shadow-lg transition-all duration-300 transform",
+            "fixed top-0 right-0 h-[100dvh] bg-black shadow-lg transition-all duration-300 transform",
             "",
             isOpen ? "translate-x-0" : "translate-x-full",
             "w-full xl:w-1/2 2xl:max-w-[960px]"
