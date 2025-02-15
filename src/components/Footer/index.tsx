@@ -16,7 +16,7 @@ export function Footer({ className }: FooterProps) {
     <div id="footer-observer" className="relative">
       <footer
         className={cn(
-          "fixed inset-0 bg-black text-white -z-10 h-[100svh]",
+          "fixed inset-0 bg-black text-white -z-10 h-[100dvh] top-0 left-0",
           "flex flex-col justify-end",
           "overflow-hidden transition-transform duration-400",
           className
