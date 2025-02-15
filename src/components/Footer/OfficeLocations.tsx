@@ -13,11 +13,12 @@ interface OfficeLocationsProps {
 
 export function OfficeLocations({ offices }: OfficeLocationsProps) {
   return (
-    <nav className={cn("company-offices hidden md:block", "xl:mt-[14vmin]")}>
+    <nav className={cn("company-offices hidden sm:block", "xl:mt-[14vmin]")}>
       <ul
         className={cn(
           "grid grid-cols-6 list-none",
           "mt-[175px] gap-[min(50px,7vw)]",
+          "sm:grid-cols-2",
           "2xl:mt-[94px]",
           "xl:mt-[60px]",
           "lg:grid-cols-6 lg:mt-[min(50px,7vw)] lg:gap-y-[calc(min(50px,7vw)*0.5)]",
@@ -29,9 +30,8 @@ export function OfficeLocations({ offices }: OfficeLocationsProps) {
             key={index}
             className={cn(
               "menu-item relative leading-[1.5] md:leading-[1.15]",
-              "border-r border-[#d8d8d8]",
-              "md:border-r-0",
-              "lg:border-r-0",
+              "border-r-0",
+              " border-[#d8d8d8]",
               "md:[&:nth-child(1)]:border-r md:[&:nth-child(3)]:border-r",
               "lg:border-r lg:[&:nth-child(4)]:border-r-0  lg:[&:nth-child(5)]:border-r"
             )}
