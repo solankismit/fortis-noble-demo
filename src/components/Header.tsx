@@ -227,7 +227,9 @@ export default function Header({ onMenuToggle }: HeaderProps) {
         className={cn(
           "fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent",
           isScrolled && "",
-          isScrollingUp || isOpen ? "translate-y-0" : "-translate-y-full",
+          isScrollingUp || isOpen || isFooterVisible
+            ? "translate-y-0"
+            : "-translate-y-full",
           textColorClass
         )}
       >
