@@ -3,6 +3,9 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
+import { IoClose } from "react-icons/io5";
+import { IoSearchOutline } from "react-icons/io5";
+import { Section } from "./Section";
 
 interface NavItem {
   text: string;
@@ -25,15 +28,28 @@ interface SearchOverlayProps {
 
 function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
   const popularSearchTerms = [
-    [
-      { text: "Practice groups", href: "/?s=Practice+groups" },
-      { text: "Industry sectors", href: "/?s=Industry+sectors" },
-    ],
-    [
-      { text: "Student", href: "/?s=Student" },
-      { text: "Vacancies", href: "/?s=Vacancies" },
-      { text: "Expertise", href: "/?s=Expertise" },
-    ],
+    {
+      groupSize: 2,
+      items: [
+        { text: "Practice groups", href: "/?s=Practice+groups" },
+        { text: "Industry sectors", href: "/?s=Industry+sectors" },
+      ],
+    },
+    {
+      groupSize: 3,
+      items: [
+        { text: "Student", href: "/?s=Student" },
+        { text: "Vacancies", href: "/?s=Vacancies" },
+        { text: "Expertise", href: "/?s=Expertise" },
+      ],
+    },
+    {
+      groupSize: 2,
+      items: [
+        { text: "News", href: "/?s=News" },
+        { text: "About us", href: "/?s=About" },
+      ],
+    },
   ];
 
   return (
@@ -45,79 +61,75 @@ function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
         isOpen && "pointer-events-auto opacity-100 visible"
       )}
     >
-      <div className="wrapper relative">
+      <div className="relative h-screen">
         <button
+          type="button"
           onClick={onClose}
           className={cn(
-            "absolute bg-[url('/cross-white.svg')] bg-center bg-no-repeat bg-cover",
-            "border-none text-white outline-none p-0 m-0",
-            "top-[40px] right-[100px] h-[18px] w-[18px] min-w-0",
+            "absolute z-[2001]",
+            "border-none text-white outline-none p-2",
+            "top-[40px] right-[100px]",
             "xl:right-[50px] xl:top-[20px]",
             "md:top-[min(50px,7vw)] md:right-[min(50px,7vw)]",
-            "hover:bg-transparent hover:opacity-70",
-            "after:content-[''] after:block after:w-[50px] after:h-[50px]",
-            "after:absolute after:top-1/2 after:left-1/2",
-            "after:-translate-x-1/2 after:-translate-y-1/2"
+            "hover:opacity-70 transition-opacity duration-300",
+            "cursor-pointer"
           )}
         >
-          <span className="indent-[-9000px]">Close</span>
+          <IoClose className="w-[30px] h-[30px]" />
+          <span className="sr-only">Close</span>
         </button>
+        <Section noPadding>
+          <form
+            action="/"
+            method="get"
+            className="pt-[115px] xl:pt-[98px] md:pt-[min(50px,7vw)]"
+            role="search"
+          >
+            <div className="my-[min(50px,7vw)] md:my-[40px] md:mx-auto 2xl:my-[50px] 2xl:max-w-[83.3334%] relative border-b border-white">
+              <input
+                type="search"
+                name="s"
+                placeholder="Search"
+                className={cn(
+                  "w-full bg-transparent",
+                  "border-none border-b border-white",
+                  "font-monument-grotesk text-[1.6rem] xl:text-[1.5rem]",
+                  "text-white tracking-[0.5px]",
+                  "py-[14.5px] px-[6px] pr-[40px]",
+                  "placeholder:text-white",
+                  "focus:border-white focus:outline-none"
+                )}
+              />
+              <IoSearchOutline className="absolute right-[6px] top-1/2 -translate-y-1/2 w-[26px] h-[26px]" />
+              <button className="sr-only">Search</button>
+            </div>
+          </form>
 
-        <form
-          action="/"
-          method="get"
-          className="pt-[115px] xl:pt-[98px] md:pt-[min(50px,7vw)]"
-          role="search"
-        >
-          <div className="search-input-container">
-            <input
-              type="search"
-              name="s"
-              placeholder="Search"
-              className={cn(
-                "w-full bg-transparent",
-                "border-none border-b border-white",
-                "font-monument-grotesk text-[1.6rem] xl:text-[1.5rem]",
-                "text-white tracking-[0.5px]",
-                "py-[14.5px] px-[6px] pr-[26px]",
-                "placeholder:text-white",
-                "focus:border-white focus:outline-none",
-                "bg-[url('/search-icon-white.svg')] bg-no-repeat",
-                "bg-right bg-[length:26px_26px]"
-              )}
-            />
-            <button className="opacity-0 p-0 absolute right-0 top-0 min-w-[26px] w-[26px] h-full">
-              Search
-            </button>
-          </div>
-        </form>
-
-        <div className="search-overlay_helpers">
           <h3
             className={cn(
-              "font-monument-grotesk text-[1.6rem] xl:text-[1.5rem]",
+              "font-monument-grotesk text-[1.5rem] 2xl:text-[1.6rem]",
               "font-normal tracking-[0.75px] uppercase text-center",
-              "my-[115px] mb-[20px]",
-              "sm:mt-[calc(min(50px,7vw)*3)]"
+              "sm:mt-[115px] mb-[20px]",
+              "mt-[calc(min(50px,7vw)*3)]"
             )}
           >
             Popular search terms
           </h3>
-          <ul className="flex flex-col items-center justify-center">
-            {popularSearchTerms.map((row, rowIndex) => (
+          <ul className="flex flex-col items-center justify-center ">
+            {popularSearchTerms.map((group, groupIndex) => (
               <li
-                key={rowIndex}
+                key={groupIndex}
                 className={cn(
-                  "flex flex-row flex-wrap text-[7.2rem]",
+                  "flex flex-col flex-wrap text-[2.4rem]",
+                  "2xl:text-[7.2rem]",
                   "xl:text-[6rem]",
-                  "lg:text-[4.2rem]",
-                  "md:text-[3.4rem]",
-                  "sm:flex-col sm:text-[2.4rem] sm:text-center",
-                  "font-itc-caslon"
+                  "md:text-[4.2rem]",
+                  "sm:flex-row sm:text-[3.4rem] sm:text-center",
+                  "font-itc-caslon items-center justify-center"
                 )}
               >
-                {row.map((term, termIndex) => (
-                  <span key={termIndex}>
+                {group.items.map((term, termIndex) => (
+                  <span key={termIndex} className="flex items-center">
                     <Link
                       href={term.href}
                       className={cn(
@@ -128,15 +140,17 @@ function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                     >
                       {term.text}
                     </Link>
-                    {termIndex < row.length - 1 && (
-                      <span className="mx-[0.334em] sm:hidden">/</span>
+                    {termIndex < group.items.length - 1 && (
+                      <span className="mx-[0.334em] hidden sm:block text-white">
+                        /
+                      </span>
                     )}
                   </span>
                 ))}
               </li>
             ))}
           </ul>
-        </div>
+        </Section>
       </div>
     </div>
   );
