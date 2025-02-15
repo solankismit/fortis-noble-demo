@@ -73,9 +73,9 @@ function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
           className={cn(
             "absolute z-[2001]",
             "border-none text-white outline-none p-2",
-            "top-[40px] right-[100px]",
-            "xl:right-[50px] xl:top-[20px]",
-            "md:top-[min(50px,7vw)] md:right-[min(50px,7vw)]",
+            "2xl:top-[40px] 2xl:right-[100px]",
+            "md:right-[50px] md:top-[20px]",
+            "top-[min(50px,7vw)] right-[min(50px,7vw)]",
             "hover:opacity-70 transition-opacity duration-300",
             "cursor-pointer"
           )}

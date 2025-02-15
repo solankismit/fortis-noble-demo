@@ -30,18 +30,18 @@ interface FooterProps {
   }>;
 }
 
-export function Footer({ 
+export function Footer({
   className,
   newsletter,
   officeLocations,
   companyInfo,
-  legalLinks
+  legalLinks,
 }: FooterProps) {
   return (
     <div id="footer-observer" className="relative">
       <footer
         className={cn(
-          "fixed inset-0 bg-black text-white -z-10 h-[100dvh] top-0 left-0",
+          "fixed inset-0 bg-black text-white -z-10 min-h-[100dvh] top-0",
           "flex flex-col justify-end",
           "overflow-hidden transition-transform duration-400",
           className
@@ -53,7 +53,7 @@ export function Footer({
               title={newsletter.title}
               description={newsletter.description}
               buttonText={newsletter.buttonText}
-              buttonHref='#'
+              buttonHref="#"
             />
 
             <OfficeLocations offices={officeLocations} />

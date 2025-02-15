@@ -8,7 +8,7 @@ import { Hero } from "@/components/Hero";
 import News from "@/components/News";
 import Expertise from "@/components/Expertise";
 import EmployeesSection from "@/components/EmployeeSection";
-import {  useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
