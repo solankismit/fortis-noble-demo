@@ -9,9 +9,34 @@ import { Section } from "../Section";
 interface FooterProps {
   className?: string;
   isOffcanvasActive?: boolean;
+  newsletter: {
+    title: string;
+    description: string;
+    buttonText: string;
+  };
+  officeLocations: Array<{
+    country: string;
+    cities: string[];
+    href: string;
+  }>;
+  companyInfo: {
+    name: string;
+    orgNumber: string;
+    vatNumber: string;
+  };
+  legalLinks: Array<{
+    text: string;
+    href: string;
+  }>;
 }
 
-export function Footer({ className }: FooterProps) {
+export function Footer({ 
+  className,
+  newsletter,
+  officeLocations,
+  companyInfo,
+  legalLinks
+}: FooterProps) {
   return (
     <div id="footer-observer" className="relative">
       <footer
@@ -25,18 +50,18 @@ export function Footer({ className }: FooterProps) {
         <Section noPadding>
           <div className="relative w-full pt-[min(50px,7vw)] pb-[15px] md:pb-[20px] xl:pt-[40px] 2xl:pb-[40px]">
             <Newsletter
-              title="More Fortis Noble?"
-              description="Keep up to date with our newsletters."
-              buttonText="Subscribe"
-              buttonHref="/newsletter"
+              title={newsletter.title}
+              description={newsletter.description}
+              buttonText={newsletter.buttonText}
+              buttonHref='#'
             />
 
             <OfficeLocations offices={officeLocations} />
 
             <CompanyInfo
-              companyName="2008-2025 © Fortis Noble Advokatbyrå AB with registered office in Stockholm"
-              orgNumber="Organisation number: 556399-4499"
-              vatNumber="Momsnummer (VAT no): SE556399449901"
+              companyName={companyInfo.name}
+              orgNumber={companyInfo.orgNumber}
+              vatNumber={companyInfo.vatNumber}
             />
             <div className="flex flex-col md:flex-row justify-center items-center">
               <nav className="mt-[calc(min(1em,7vw))]">
@@ -84,37 +109,6 @@ export function Footer({ className }: FooterProps) {
     </div>
   );
 }
-
-const officeLocations = [
-  {
-    country: "Sweden",
-    cities: ["Stockholm", "Gothenburg", "Malmö"],
-    href: "/contact/sweden",
-  },
-  {
-    country: "Belgium",
-    cities: ["Brussels"],
-    href: "/contact/brussels",
-  },
-  {
-    country: "Singapore",
-    cities: ["Singapore"],
-    href: "/contact/singapore",
-  },
-  {
-    country: "USA",
-    cities: ["New York"],
-    href: "/contact/usa",
-  },
-];
-
-const legalLinks = [
-  { text: "Contact us", href: "/contact" },
-  { text: "Terms and conditions", href: "/terms" },
-  { text: "Disclaimer", href: "/disclaimer" },
-  { text: "Privacy Notice", href: "/privacy" },
-  { text: "Cookie policy", href: "/cookies" },
-];
 
 const socialLinks = [
   {

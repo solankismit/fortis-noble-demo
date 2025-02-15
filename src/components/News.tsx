@@ -7,7 +7,10 @@ interface NewsCardProps {
   image: string;
   title: string;
   date: string;
-  categories?: string[];
+  categories?: {
+    title: string;
+    href: string;
+  }[];
 }
 
 const NewsCard = ({ image, title, date, categories }: NewsCardProps) => (
@@ -32,11 +35,11 @@ const NewsCard = ({ image, title, date, categories }: NewsCardProps) => (
             className="inline-block mr-[3.2px] md:mr-[12px] mb-[2px] md:mb-[6px]"
           >
             <Link
-              href={`#`}
+              href={category.href}
               key={index}
               className="border-b border-[#999999] hover:border-transparent transition-all duration-300 text-[#999999] font-sans text-[1.2rem] md:text-[1.3rem] font-normal tracking-widest uppercase"
             >
-              {category}
+              {category.title}
             </Link>
           </li>
         ))}
@@ -48,48 +51,17 @@ const NewsCard = ({ image, title, date, categories }: NewsCardProps) => (
   </div>
 );
 
-const News = () => {
-  const newsItems = [
-    {
-      image: "/assets/uppdrag1.jpg",
-      title: "Aurelius acquires Lernia",
-      date: "February 6, 2025",
-      categories: [
-        "Banking and finance",
-        "Business transfers",
-        "Private Equity",
-      ],
-    },
-    {
-      image: "/assets/uppdrag2.jpg",
-      title: "Electronic Arts acquires TRACAB",
-      date: "February 6, 2025",
-      categories: [
-        "Labor law and pensions",
-        "Business transfers",
-        "Intellectual property law, market law and media law",
-        "IT/Tech",
-      ],
-    },
-    {
-      image: "/assets/corporate-stockholm.jpg",
-      title: "Fortis Noble Annual Publication 2025",
-      date: "February 4, 2025",
-    },
-    {
-      image: "/assets/uppdrag3.jpg",
-      title:
-        "ICAGruppen enters into a credit facility agreement of SEK 6 billion.",
-      date: "January 30, 2025",
-      categories: ["Banking and finance"],
-    },
-  ];
+interface NewsProps {
+  data: NewsCardProps[];
+  ctaButton: string;
+}
 
+const News = ({ data, ctaButton }: NewsProps) => {
   return (
     <>
       <div>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[min(50px,7vw)]">
-          {newsItems.map((item, index) => (
+          {data.map((item, index) => (
             <div key={index} className="relative">
               <NewsCard
                 image={item.image}
@@ -97,7 +69,7 @@ const News = () => {
                 date={item.date}
                 categories={item.categories}
               />
-              {index < newsItems.length - 1 && (
+              {index < data.length - 1 && (
                 <>
                   {/* Show divider for xl (4 columns) */}
                   <div className="hidden xl:block absolute right-[-25px] top-0 h-full w-[1px] bg-[#d8d8d8]" />
@@ -112,7 +84,7 @@ const News = () => {
           ))}
         </div>
         <div className="flex justify-center mt-[47px] 2xl:mt-[60px]">
-          <Button href="/news">News</Button>
+          <Button href="/news">{ctaButton}</Button>
         </div>
       </div>
     </>

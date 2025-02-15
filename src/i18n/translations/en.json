@@ -8,38 +8,97 @@
     "search": "Search"
   },
   "hero": {
-    "title": "Fortis Noble",
-    "subtitle": "Legal Excellence & Innovation",
-    "description": "A leading law firm with a focus on business law and commercial matters",
+    "title": "Welcome to Fortis Noble",
     "ctaButton": "Learn More"
   },
-  "expertise": {
-    "title": "Our Expertise",
-    "description": "We provide comprehensive legal services across various practice areas",
-    "areas": {
-      "corporate": {
-        "title": "Corporate Law",
-        "description": "Expert guidance in corporate structuring and governance"
-      },
-      "litigation": {
-        "title": "Litigation",
-        "description": "Strategic representation in complex legal disputes"
-      },
-      "intellectual": {
-        "title": "Intellectual Property",
-        "description": "Protection and management of intellectual assets"
-      }
-    }
-  },
   "news": {
-    "title": "Latest News",
-    "viewAll": "View All News",
-    "readMore": "Read More"
+    "title": "News",
+    "ctaButton": "News",
+    "data": [
+      {
+        "image": "/assets/uppdrag1.jpg",
+        "title": "Lindab divests Slovakian operations to local Investors Corporate Commercial Mergers and Acquisitions",
+        "categories": [
+          {
+            "title": "Corporate Commercial",
+            "href": "#"
+          },
+          {
+            "title": "Mergers and Acquisitions",
+            "href": "#"
+          }
+        ],
+        "date": "14 February 2025"
+      },
+      {
+        "image": "/assets/uppdrag2.jpg",
+        "title": "KPMG divests its business regarding audit, advisory and tax services to smaller companies",
+        "categories": [
+          {
+            "title": "Corporate Commercial",
+            "href": "#"
+          },
+          {
+            "title": "Employment and Pensions",
+            "href": "#"
+          },
+          {
+            "title": "Mergers and Acquisitions",
+            "href": "#"
+          }
+        ],
+        "date": "13 February 2025"
+      },
+      {
+        "image": "/assets/corporate-stockholm.jpg",
+        "title": "Munters divests FoodTech Equipment offering",
+        "categories": [
+          {
+            "title": "Corporate Commercial",
+            "href": "#"
+          },
+          {
+            "title": "IT/Tech",
+            "href": "#"
+          },
+          {
+            "title": "Mergers and Acquisitions",
+            "href": "#"
+          }
+        ],
+        "date": "11 February 2025"
+      },
+      {
+        "image": "/assets/uppdrag3.jpg",
+        "title": "M&G acquires a majority stake in P Capital Partners",
+        "categories": [
+          {
+            "title": "Funds and Investments",
+            "href": "#"
+          },
+          {
+            "title": "Private Equity",
+            "href": "#"
+          }
+        ],
+        "date": "11 February 2025"
+      }
+    ]
+  },
+  "expertise": {
+    "title": "Expertise",
+    "description": "What truly distinguishes Mannheimer Swartling in the Swedish legal market is the way we have built our full-service practice. We have specialist lawyers for all branches of business law, working in dedicated practice groups. All these groups are typically class-leading and they handle their own specialist projects independently – working at the forefront of their respective fields – as well as providing the highest level of transactional support. This combination gives us the ability to quickly mobilise a single team of experts with the best skillset for every facet of every engagement.",
+    "ctaButton": "Our Advisory Services"
   },
   "employees": {
-    "title": "Our Team",
-    "description": "Meet our experienced legal professionals",
-    "viewProfile": "View Profile"
+    "title": "Our People",
+    "description": " Who are you looking for? Although we are spread across a global market, we are a close-knit team with expertise in all areas of business law.",
+    "ctaButton": "Find employees"
+  },
+  "hero2": {
+    "title": "International",
+    "description": "Fortis Noble is a leading international law firm with a strong focus on the Nordic region. We are a full-service law firm with a strong focus on the Nordic region.",
+    "ctaButton": "Learn More"
   },
   "footer": {
     "newsletter": {
@@ -48,23 +107,47 @@
       "buttonText": "Subscribe",
       "placeholder": "Enter your email"
     },
-    "legal": {
-      "contactUs": "Contact us",
-      "terms": "Terms and conditions",
-      "disclaimer": "Disclaimer",
-      "privacy": "Privacy Notice",
-      "cookies": "Cookie policy"
-    },
+    "officeLocations": [
+      {
+        "country": "Sweden",
+        "cities": ["Stockholm", "Gothenburg", "Malmö"],
+        "href": "/contact/sweden"
+      },
+      {
+        "country": "Belgium",
+        "cities": ["Brussels"],
+        "href": "/contact/brussels"
+      },
+      {
+        "country": "Singapore",
+        "cities": ["Singapore"],
+        "href": "/contact/singapore"
+      },
+      {
+        "country": "USA",
+        "cities": ["New York"],
+        "href": "/contact/usa"
+      }
+    ],
+
+    "legal": [
+      {
+        "text": "Contact us",
+        "href": "/contact"
+      },
+      {
+        "text": "Terms and conditions",
+        "href": "/terms"
+      },
+      {
+        "text": "Disclaimer",
+        "href": "/disclaimer"
+      }
+    ],
     "companyInfo": {
       "name": "2008-2025 © Fortis Noble Advokatbyrå AB with registered office in Stockholm",
       "orgNumber": "Organisation number: 556399-4499",
       "vatNumber": "VAT no: SE556399449901"
-    },
-    "social": {
-      "follow": "Follow Us",
-      "instagram": "Instagram",
-      "facebook": "Facebook",
-      "linkedin": "LinkedIn"
     }
   },
   "search": {

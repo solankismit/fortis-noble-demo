@@ -8,38 +8,97 @@
     "search": "Sök"
   },
   "hero": {
-    "title": "Fortis Noble",
-    "subtitle": "Juridisk Excellence & Innovation",
-    "description": "En ledande advokatbyrå med fokus på affärsjuridik och kommersiella ärenden",
+    "title": "Välkommen till Fortis Noble",
     "ctaButton": "Läs mer"
   },
   "expertise": {
-    "title": "Vår Expertis",
-    "description": "Vi erbjuder omfattande juridiska tjänster inom olika verksamhetsområden",
-    "areas": {
-      "corporate": {
-        "title": "Bolagsrätt",
-        "description": "Expert på bolagsstrukturering och styrning"
-      },
-      "litigation": {
-        "title": "Tvistlösning",
-        "description": "Strategisk representation i komplexa juridiska tvister"
-      },
-      "intellectual": {
-        "title": "Immaterialrätt",
-        "description": "Skydd och hantering av immateriella tillgångar"
-      }
-    }
+    "title": "Expertis",
+    "description": "Det som verkligen särskiljer Mannheimer Swartling på den svenska juridiska marknaden är hur vi har byggt vår fullservicepraktik. Vi har specialistjurister för alla grenar inom affärsjuridik som arbetar i dedikerade praktikgrupper. Alla dessa grupper är typiskt sett ledande i sin klass och de hanterar sina egna specialistprojekt självständigt – i framkant inom sina respektive områden – samtidigt som de tillhandahåller transaktionsstöd på högsta nivå. Denna kombination ger oss förmågan att snabbt mobilisera ett enda team av experter med den bästa kompetensen för varje aspekt av varje uppdrag.",
+    "ctaButton": "Våra rådgivningstjänster"
   },
   "news": {
-    "title": "Senaste Nytt",
-    "viewAll": "Visa Alla Nyheter",
-    "readMore": "Läs Mer"
+    "title": "Nyheter",
+    "ctaButton": "Nyheter",
+    "data": [
+      {
+        "image": "/assets/uppdrag1.jpg",
+        "title": "Lindab avyttrar slovakisk verksamhet till lokala investerare Corporate Commercial Mergers and Acquisitions",
+        "categories": [
+          {
+            "title": "Bolagsrätt",
+            "href": "#"
+          },
+          {
+            "title": "Företagsförvärv",
+            "href": "#"
+          }
+        ],
+        "date": "14 februari 2025"
+      },
+      {
+        "image": "/assets/uppdrag2.jpg",
+        "title": "KPMG avyttrar sin verksamhet gällande revision, rådgivning och skattetjänster till mindre företag",
+        "categories": [
+          {
+            "title": "Bolagsrätt",
+            "href": "#"
+          },
+          {
+            "title": "Arbetsrätt och Pensioner",
+            "href": "#"
+          },
+          {
+            "title": "Företagsförvärv",
+            "href": "#"
+          }
+        ],
+        "date": "13 februari 2025"
+      },
+      {
+        "image": "/assets/corporate-stockholm.jpg",
+        "title": "Munters avyttrar FoodTech Equipment-erbjudandet",
+        "categories": [
+          {
+            "title": "Bolagsrätt",
+            "href": "#"
+          },
+          {
+            "title": "IT/Tech",
+            "href": "#"
+          },
+          {
+            "title": "Företagsförvärv",
+            "href": "#"
+          }
+        ],
+        "date": "11 februari 2025"
+      },
+      {
+        "image": "/assets/uppdrag3.jpg",
+        "title": "M&G förvärvar majoritetsandel i P Capital Partners",
+        "categories": [
+          {
+            "title": "Fonder och Investeringar",
+            "href": "#"
+          },
+          {
+            "title": "Private Equity",
+            "href": "#"
+          }
+        ],
+        "date": "11 februari 2025"
+      }
+    ]
   },
   "employees": {
     "title": "Vårt Team",
-    "description": "Möt våra erfarna jurister",
-    "viewProfile": "Visa Profil"
+    "description": "Vem letar du efter? Även om vi är utspridda över en global marknad är vi ett sammansvetsat team med expertis inom alla områden av affärsjuridik.",
+    "ctaButton": "Hitta medarbetare"
+  },
+  "hero2": {
+    "title": "Internationellt",
+    "description": "Fortis Noble är en ledande internationell advokatbyrå med stark fokus på Norden. Vi är en fullständig advokatbyrå med stark fokus på Norden.",
+    "ctaButton": "Läs mer"
   },
   "footer": {
     "newsletter": {
@@ -48,23 +107,46 @@
       "buttonText": "Prenumerera",
       "placeholder": "Ange din e-post"
     },
-    "legal": {
-      "contactUs": "Kontakta oss",
-      "terms": "Villkor",
-      "disclaimer": "Ansvarsfriskrivning",
-      "privacy": "Integritetspolicy",
-      "cookies": "Cookie-policy"
-    },
+    "officeLocations": [
+      {
+        "country": "Sverige",
+        "cities": ["Stockholm", "Göteborg", "Malmö"],
+        "href": "/contact/sweden"
+      },
+      {
+        "country": "Belgien", 
+        "cities": ["Bryssel"],
+        "href": "/contact/brussels"
+      },
+      {
+        "country": "Singapore",
+        "cities": ["Singapore"],
+        "href": "/contact/singapore"
+      },
+      {
+        "country": "USA",
+        "cities": ["New York"],
+        "href": "/contact/usa"
+      }
+    ],
+    "legal": [
+      {
+        "text": "Kontakta oss",
+        "href": "/contact"
+      },
+      {
+        "text": "Villkor",
+        "href": "/terms"
+      },
+      {
+        "text": "Ansvarsfriskrivning",
+        "href": "/disclaimer"
+      }
+    ],
     "companyInfo": {
       "name": "2008-2025 © Fortis Noble Advokatbyrå AB med säte i Stockholm",
       "orgNumber": "Organisationsnummer: 556399-4499",
       "vatNumber": "Momsnr: SE556399449901"
-    },
-    "social": {
-      "follow": "Följ Oss",
-      "instagram": "Instagram",
-      "facebook": "Facebook",
-      "linkedin": "LinkedIn"
     }
   },
   "search": {

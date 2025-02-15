@@ -7,16 +7,11 @@ import { IoClose } from "react-icons/io5";
 import { IoSearchOutline } from "react-icons/io5";
 import { Section } from "./Section";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { languageNames, locales, type ValidLocale } from "@/i18n/config";
+import { languageNames } from "@/i18n/config";
 
 interface NavItem {
   text: string;
   href: string;
-}
-
-interface LanguageItem {
-  code: string;
-  active: boolean;
 }
 
 interface HeaderProps {
@@ -166,29 +161,6 @@ function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
   );
 }
 
-const menuItems: NavItem[] = [
-  { text: "About", href: "/about1" },
-  { text: "Services", href: "/services1" },
-  { text: "Contact", href: "/contact1" },
-  { text: "About", href: "/about2" },
-  { text: "Services", href: "/services2" },
-  { text: "Contact", href: "/contact2" },
-  { text: "About", href: "/about3" },
-  { text: "Services", href: "/services3" },
-  { text: "Contact", href: "/contact3" },
-];
-
-const navItems: NavItem[] = [
-  { text: "About", href: "/about" },
-  { text: "Services", href: "/services" },
-  { text: "Contact", href: "/contact" },
-];
-
-const languages: LanguageItem[] = [
-  { code: "English", active: true },
-  { code: "Svenska", active: false },
-];
-
 export default function Header({ onMenuToggle }: HeaderProps) {
   const { locale, setLanguage, translations } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
@@ -243,10 +215,18 @@ export default function Header({ onMenuToggle }: HeaderProps) {
     onMenuToggle(state);
   };
 
+  const menuItems: NavItem[] = [
+    { text: translations.header.menu.about, href: "#" },
+    { text: translations.header.menu.services, href: "#" },
+    { text: translations.header.menu.contact, href: "#" },
+    { text: translations.header.menu.about, href: "#" },
+    { text: translations.header.menu.services, href: "#" },
+    { text: translations.header.menu.contact, href: "#" },
+  ];
   const navItems: NavItem[] = [
-    { text: translations.header.menu.about, href: "/about" },
-    { text: translations.header.menu.services, href: "/services" },
-    { text: translations.header.menu.contact, href: "/contact" },
+    { text: translations.header.menu.about, href: "#" },
+    { text: translations.header.menu.services, href: "#" },
+    { text: translations.header.menu.contact, href: "#" },
   ];
 
   return (
@@ -279,9 +259,9 @@ export default function Header({ onMenuToggle }: HeaderProps) {
             <div className="flex items-center">
               {/* Desktop Navigation */}
               <nav className="hidden xl:flex items-center gap-[20px]">
-                {navItems.map((item) => (
+                {navItems.map((item, index) => (
                   <Link
-                    key={item.href}
+                    key={index}
                     href={item.href}
                     className={cn(
                       "hover:opacity-70 font-monument-grotesk text-2xl transition-colors duration-300",
@@ -396,9 +376,9 @@ export default function Header({ onMenuToggle }: HeaderProps) {
                 <div className="hidden xl:block absolute left-16 top-0 w-[1px] h-full bg-white/70" />
 
                 <div className="space-y-8 relative">
-                  {menuItems.map((item) => (
+                  {menuItems.map((item, index) => (
                     <Link
-                      key={item.href}
+                      key={index}
                       href={item.href}
                       className={cn(
                         "hover:text-gray-400 transition-colors text-5xl sm:text-6xl md:text-7xl 2xl:text-8xl block leading-none text-white"
