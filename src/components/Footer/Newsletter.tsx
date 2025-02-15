@@ -15,14 +15,11 @@ export function Newsletter({
 }: NewsletterProps) {
   return (
     <div className="text-center">
-      <h2
-        className="tmb-[0.42em] 
-        "
-      >
+      <h2 className="mb-[0.42em] max-[330px]:text-[2.4rem] min-[330px]:text-[3.4rem] sm:text-[4.2rem] md:text-[4.8rem] 2xl:text-[6rem]">
         {title}
       </h2>
-      <p className="text-[2.4rem] xl:text-[2rem]">{description}</p>
-      <footer className="mt-[58px] xl:mt-[38px] md:mt-[min(50px,7vw)]">
+      <p className="text-[1.6rem] min-[330px]:text-[1.8rem]">{description}</p>
+      <footer className="2xl:mt-[58px] md:mt-[38px] mt-[min(50px,7vw)]">
         <Button href={buttonHref} variant="white" circular>
           {buttonText}
         </Button>
