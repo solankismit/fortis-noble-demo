@@ -285,17 +285,6 @@ export default function Header({ onMenuToggle }: HeaderProps) {
               {/* Language Switcher - Always visible */}
               <div className="hidden xl:flex items-center gap-[20px] ml-8 z-[2000]">
                 <button
-                  className={cn(
-                    "text-[1.6rem] font-monument-grotesk transition-colors duration-300",
-                    isOpen
-                      ? "text-white opacity-60 hover:opacity-100"
-                      : `${textColorClass} opacity-60 hover:opacity-100`
-                  )}
-                  onClick={() => setIsSearchOpen(true)}
-                >
-                  {translations.header.search}
-                </button>
-                <button
                   onClick={handleLanguageSwitch}
                   className={cn(
                     "text-[1.6rem] font-monument-grotesk transition-colors duration-300",
@@ -305,6 +294,17 @@ export default function Header({ onMenuToggle }: HeaderProps) {
                   )}
                 >
                   {languageNames[locale === "en" ? "sv" : "en"]}
+                </button>
+                <button
+                  className={cn(
+                    "text-[1.6rem] font-monument-grotesk transition-colors duration-300",
+                    isOpen
+                      ? "text-white opacity-60 hover:opacity-100"
+                      : `${textColorClass} opacity-60 hover:opacity-100`
+                  )}
+                  onClick={() => setIsSearchOpen(true)}
+                >
+                  {translations.header.search}
                 </button>
               </div>
 
@@ -379,12 +379,12 @@ export default function Header({ onMenuToggle }: HeaderProps) {
           <div className="hidden md:block absolute left-0 top-0 w-[1px] h-full bg-white/20" />
 
           <div className=" h-full relative">
-            <nav className="flex flex-col justify-center h-full">
-              <div className="relative px-[min(50px,7vw)] xl:px-32">
+            <nav className="flex flex-col justify-center h-full ">
+              <div className="relative py-[25px] md:py-0 px-[min(50px,7vw)] xl:px-32 xl:ml-[25px] 2xl:px-0 2xl:ml-[170px]">
                 {/* Vertical line that only covers the buttons */}
-                <div className="hidden xl:block absolute left-16 top-0 w-[1px] h-full bg-white/70" />
+                <div className="hidden xl:block absolute left-16 top-0 w-[1px] h-full bg-white/70 2xl:-left-[25px]" />
 
-                <div className="space-y-8 relative">
+                <div className="space-y-8 relative ">
                   {menuItems.map((item, index) => (
                     <Link
                       key={index}
@@ -400,6 +400,31 @@ export default function Header({ onMenuToggle }: HeaderProps) {
                 </div>
               </div>
             </nav>
+            {/* Language Switcher - Always visible */}
+            <div className="absolute bottom-[min(50px,7vw)] w-full left-[min(50px,7vw)] xl:px-32 xl:hidden items-center flex gap-[20px] z-[2000]">
+              <button
+                onClick={handleLanguageSwitch}
+                className={cn(
+                  "text-[1.6rem] font-monument-grotesk transition-colors duration-300",
+                  isOpen
+                    ? "text-white opacity-60 hover:opacity-100"
+                    : `${textColorClass} opacity-60 hover:opacity-100`
+                )}
+              >
+                {languageNames[locale === "en" ? "sv" : "en"]}
+              </button>
+              <button
+                className={cn(
+                  "text-[1.6rem] font-monument-grotesk transition-colors duration-300",
+                  isOpen
+                    ? "text-white opacity-60 hover:opacity-100"
+                    : `${textColorClass} opacity-60 hover:opacity-100`
+                )}
+                onClick={() => setIsSearchOpen(true)}
+              >
+                {translations.header.search}
+              </button>
+            </div>
           </div>
         </div>
       </header>
