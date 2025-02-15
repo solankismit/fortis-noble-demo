@@ -167,6 +167,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isChangingLanguage, setIsChangingLanguage] = useState(false);
   const footerRef = useRef<Element>(null);
   const heroRef = useRef<Element>(null);
 
@@ -181,20 +182,18 @@ export default function Header({ onMenuToggle }: HeaderProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (isOpen) {
+      if (isOpen || isChangingLanguage) {
         setIsScrollingUp(true);
         return;
       }
       const currentScrollY = window.scrollY;
-
-      // Determine scroll direction
-      setIsScrollingUp(currentScrollY < lastScrollY);
+      setIsScrollingUp(currentScrollY <= 0 || currentScrollY < lastScrollY);
       setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY, isOpen]);
+  }, [lastScrollY, isOpen, isChangingLanguage]);
 
   useEffect(() => {
     // Find footer and hero elements
@@ -213,6 +212,16 @@ export default function Header({ onMenuToggle }: HeaderProps) {
   const toggleMenu = (state: boolean) => {
     setIsOpen(state);
     onMenuToggle(state);
+  };
+
+  const handleLanguageSwitch = () => {
+    setIsChangingLanguage(true);
+    const newLocale = locale === "en" ? "sv" : "en";
+    setLanguage(newLocale);
+    // Reset the language change state after animation completes
+    setTimeout(() => {
+      setIsChangingLanguage(false);
+    }, 500);
   };
 
   const menuItems: NavItem[] = [
@@ -234,7 +243,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
       <header
         className={cn(
           "fixed top-0 left-0 w-full z-50 transition-all duration-300",
-          isScrollingUp || isOpen || isFooterVisible
+          isScrollingUp || isOpen || isFooterVisible || isChangingLanguage
             ? "translate-y-0"
             : "-translate-y-full",
           textColorClass
@@ -287,7 +296,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
                   {translations.header.search}
                 </button>
                 <button
-                  onClick={() => setLanguage(locale === "en" ? "sv" : "en")}
+                  onClick={handleLanguageSwitch}
                   className={cn(
                     "text-[1.6rem] font-monument-grotesk transition-colors duration-300",
                     isOpen
