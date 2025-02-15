@@ -48,7 +48,7 @@ export function Footer({ className }: FooterProps) {
                     >
                       <Link
                         href={link.href}
-                        className="border-b border-current opacity-70 hover:opacity-90
+                        className="border-b border-current opacity-60 hover:opacity-90 transition-all duration-300 ease-in-out
                     font-monument-grotesk text-[1.3rem] uppercase tracking-[0.75px]"
                       >
                         {link.text}
@@ -59,7 +59,7 @@ export function Footer({ className }: FooterProps) {
               </nav>
 
               <ul
-                className="static mt-[min(50px,7vw)] md:mt-0 md:absolute right-[0px] flex gap-[14px]
+                className="static mt-[min(50px,7vw)] md:mt-0 md:absolute right-[0px] flex gap-[13px]
             bottom-[15px] md:bottom-[20px] 2xl:bottom-[40px]
             "
               >
@@ -69,7 +69,7 @@ export function Footer({ className }: FooterProps) {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex text-[1.5em] hover:text-[#666666]"
+                      className="flex text-[30px] hover:text-[#666666] transition-all duration-300 ease-in-out"
                       title={link.platform}
                     >
                       {link.icon}
@@ -119,17 +119,17 @@ const legalLinks = [
 const socialLinks = [
   {
     platform: "Instagram",
-    href: "https://www.instagram.com/mannheimer_swartling/",
+    href: "#",
     icon: <FaInstagram />,
   },
   {
     platform: "Facebook",
-    href: "https://www.facebook.com/mannheimerswartling",
+    href: "#",
     icon: <FaFacebookF />,
   },
   {
     platform: "LinkedIn",
-    href: "https://www.linkedin.com/company/mannheimer-swartling",
+    href: "#",
     icon: <FaLinkedinIn />,
   },
 ];

@@ -32,7 +32,7 @@ export function Button({
     "xl:min-w-[246px] xl:text-[1.5rem]",
     "2xl:min-w-[246px] 2xl:text-[1.6rem]",
     circular &&
-      "rounded-full max-w-[370px] min-w-[280px] w-full py-6 uppercase sm:min-w-[160px] sm:py-5 sm:px-6"
+      "rounded-full max-w-[370px] min-w-[160px] w-full py-6 uppercase sm:min-w-[280px] px-[1.5em] py-[1.3em] sm:py-[1.5em] sm:px-[2em]"
   );
 
   const variants = {

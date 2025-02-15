@@ -13,7 +13,9 @@ interface OfficeLocationsProps {
 
 export function OfficeLocations({ offices }: OfficeLocationsProps) {
   return (
-    <nav className={cn("company-offices hidden sm:block", "xl:mt-[14vmin]")}>
+    <nav
+      className={cn("company-offices hidden sm:block", "mt-[14vmin] 2xl:mt-0")}
+    >
       <ul
         className={cn(
           "grid grid-cols-6 list-none",
@@ -40,7 +42,7 @@ export function OfficeLocations({ offices }: OfficeLocationsProps) {
               className={cn(
                 "block font-itc-caslon  no-underline",
                 "hover:text-[#666666]",
-                "lg:text-[3.6rem]",
+                "min-[1200px]:text-[3.6rem]",
                 "text-[2.6rem]",
                 "2xl:text-[4.2rem]",
                 "leading-none"
