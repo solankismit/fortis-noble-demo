@@ -49,7 +49,7 @@ export default function Home() {
             target: "_self",
           }}
           noTopShadow
-          className="mb-[100dvh]"
+          className="mb-[100svh]"
         />
       </main>
       <Footer
