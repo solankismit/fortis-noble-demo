@@ -6,6 +6,8 @@ import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import { IoClose } from "react-icons/io5";
 import { IoSearchOutline } from "react-icons/io5";
 import { Section } from "./Section";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { languageNames, locales, type ValidLocale } from "@/i18n/config";
 
 interface NavItem {
   text: string;
@@ -27,27 +29,35 @@ interface SearchOverlayProps {
 }
 
 function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
+  const { translations } = useLanguage();
+
   const popularSearchTerms = [
     {
       groupSize: 2,
       items: [
-        { text: "Practice groups", href: "/?s=Practice+groups" },
-        { text: "Industry sectors", href: "/?s=Industry+sectors" },
+        {
+          text: translations.search.terms.practiceGroups,
+          href: "/?s=Practice+groups",
+        },
+        {
+          text: translations.search.terms.industrySectors,
+          href: "/?s=Industry+sectors",
+        },
       ],
     },
     {
       groupSize: 3,
       items: [
-        { text: "Student", href: "/?s=Student" },
-        { text: "Vacancies", href: "/?s=Vacancies" },
-        { text: "Expertise", href: "/?s=Expertise" },
+        { text: translations.search.terms.student, href: "/?s=Student" },
+        { text: translations.search.terms.vacancies, href: "/?s=Vacancies" },
+        { text: translations.search.terms.expertise, href: "/?s=Expertise" },
       ],
     },
     {
       groupSize: 2,
       items: [
-        { text: "News", href: "/?s=News" },
-        { text: "About us", href: "/?s=About" },
+        { text: translations.search.terms.news, href: "/?s=News" },
+        { text: translations.search.terms.aboutUs, href: "/?s=About" },
       ],
     },
   ];
@@ -89,7 +99,7 @@ function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
               <input
                 type="search"
                 name="s"
-                placeholder="Search"
+                placeholder={translations.search.placeholder}
                 className={cn(
                   "w-full bg-transparent",
                   "border-none border-b border-white",
@@ -101,7 +111,7 @@ function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                 )}
               />
               <IoSearchOutline className="absolute right-[6px] top-1/2 -translate-y-1/2 w-[26px] h-[26px]" />
-              <button className="sr-only">Search</button>
+              <button className="sr-only">{translations.header.search}</button>
             </div>
           </form>
 
@@ -113,7 +123,7 @@ function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
               "mt-[calc(min(50px,7vw)*3)]"
             )}
           >
-            Popular search terms
+            {translations.search.popularTerms}
           </h3>
           <ul className="flex flex-col items-center justify-center ">
             {popularSearchTerms.map((group, groupIndex) => (
@@ -180,6 +190,7 @@ const languages: LanguageItem[] = [
 ];
 
 export default function Header({ onMenuToggle }: HeaderProps) {
+  const { locale, setLanguage, translations } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -231,6 +242,12 @@ export default function Header({ onMenuToggle }: HeaderProps) {
     setIsOpen(state);
     onMenuToggle(state);
   };
+
+  const navItems: NavItem[] = [
+    { text: translations.header.menu.about, href: "/about" },
+    { text: translations.header.menu.services, href: "/services" },
+    { text: translations.header.menu.contact, href: "/contact" },
+  ];
 
   return (
     <>
@@ -287,9 +304,10 @@ export default function Header({ onMenuToggle }: HeaderProps) {
                   )}
                   onClick={() => setIsSearchOpen(true)}
                 >
-                  Search
+                  {translations.header.search}
                 </button>
                 <button
+                  onClick={() => setLanguage(locale === "en" ? "sv" : "en")}
                   className={cn(
                     "text-[1.6rem] font-monument-grotesk transition-colors duration-300",
                     isOpen
@@ -297,7 +315,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
                       : `${textColorClass} opacity-60 hover:opacity-100`
                   )}
                 >
-                  {languages.find((lang) => lang.active)?.code}
+                  {languageNames[locale === "en" ? "sv" : "en"]}
                 </button>
               </div>
 

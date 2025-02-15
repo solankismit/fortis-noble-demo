@@ -8,55 +8,58 @@ import { Hero } from "@/components/Hero";
 import News from "@/components/News";
 import Expertise from "@/components/Expertise";
 import EmployeesSection from "@/components/EmployeeSection";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
-      <Header onMenuToggle={setIsMenuOpen} />
-      <main
-        className={cn(
-          "transition-transform duration-300 ease-in-out bg-white text-black mb-[100vh]",
-          isMenuOpen && "-translate-x-full xl:-translate-x-[min(50%,960px)]"
-        )}
-      >
-        <Hero
-          id="hero-section"
-          videoSrc="video.mp4"
-          title="Welcome to Fortis Noble"
-          button={{
-            text: "Om byrån",
-            href: "/om-byran",
-            target: "_self",
-          }}
+      <LanguageProvider>
+        <Header onMenuToggle={setIsMenuOpen} />
+        <main
+          className={cn(
+            "transition-transform duration-300 ease-in-out bg-white text-black mb-[100vh]",
+            isMenuOpen && "-translate-x-full xl:-translate-x-[min(50%,960px)]"
+          )}
+        >
+          <Hero
+            id="hero-section"
+            videoSrc="video.mp4"
+            title="Welcome to Fortis Noble"
+            button={{
+              text: "Om byrån",
+              href: "/om-byran",
+              target: "_self",
+            }}
+          />
+          <Section title="News">
+            <News />
+          </Section>
+          <Section title="Expertise" borderTop>
+            <Expertise />
+          </Section>
+          <Section borderTop>
+            <EmployeesSection />
+          </Section>
+          <Hero
+            imageSrc="image.jpg"
+            title="International"
+            description="Fortis Noble is a leading international law firm with a strong focus on the Nordic region. We are a full-service law firm with a strong focus on the Nordic region."
+            button={{
+              text: "Om byrån",
+              href: "/om-byran",
+              target: "_self",
+            }}
+            noTopShadow
+          />
+        </main>
+        <Footer
+          className={cn(
+            "transition-transform duration-300 ease-in-out",
+            isMenuOpen && "-translate-x-full xl:-translate-x-[min(50%,960px)]"
+          )}
         />
-        <Section title="News">
-          <News />
-        </Section>
-        <Section title="Expertise" borderTop>
-          <Expertise />
-        </Section>
-        <Section borderTop>
-          <EmployeesSection />
-        </Section>
-        <Hero
-          imageSrc="image.jpg"
-          title="International"
-          description="Fortis Noble is a leading international law firm with a strong focus on the Nordic region. We are a full-service law firm with a strong focus on the Nordic region."
-          button={{
-            text: "Om byrån",
-            href: "/om-byran",
-            target: "_self",
-          }}
-          noTopShadow
-        />
-      </main>
-      <Footer
-        className={cn(
-          "transition-transform duration-300 ease-in-out",
-          isMenuOpen && "-translate-x-full xl:-translate-x-[min(50%,960px)]"
-        )}
-      />
+      </LanguageProvider>
     </>
   );
 }

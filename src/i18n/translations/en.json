@@ -1,0 +1,83 @@
+{
+  "header": {
+    "menu": {
+      "about": "About",
+      "services": "Services",
+      "contact": "Contact"
+    },
+    "search": "Search"
+  },
+  "hero": {
+    "title": "Fortis Noble",
+    "subtitle": "Legal Excellence & Innovation",
+    "description": "A leading law firm with a focus on business law and commercial matters",
+    "ctaButton": "Learn More"
+  },
+  "expertise": {
+    "title": "Our Expertise",
+    "description": "We provide comprehensive legal services across various practice areas",
+    "areas": {
+      "corporate": {
+        "title": "Corporate Law",
+        "description": "Expert guidance in corporate structuring and governance"
+      },
+      "litigation": {
+        "title": "Litigation",
+        "description": "Strategic representation in complex legal disputes"
+      },
+      "intellectual": {
+        "title": "Intellectual Property",
+        "description": "Protection and management of intellectual assets"
+      }
+    }
+  },
+  "news": {
+    "title": "Latest News",
+    "viewAll": "View All News",
+    "readMore": "Read More"
+  },
+  "employees": {
+    "title": "Our Team",
+    "description": "Meet our experienced legal professionals",
+    "viewProfile": "View Profile"
+  },
+  "footer": {
+    "newsletter": {
+      "title": "More Fortis Noble?",
+      "description": "Keep up to date with our newsletters.",
+      "buttonText": "Subscribe",
+      "placeholder": "Enter your email"
+    },
+    "legal": {
+      "contactUs": "Contact us",
+      "terms": "Terms and conditions",
+      "disclaimer": "Disclaimer",
+      "privacy": "Privacy Notice",
+      "cookies": "Cookie policy"
+    },
+    "companyInfo": {
+      "name": "2008-2025 © Fortis Noble Advokatbyrå AB with registered office in Stockholm",
+      "orgNumber": "Organisation number: 556399-4499",
+      "vatNumber": "VAT no: SE556399449901"
+    },
+    "social": {
+      "follow": "Follow Us",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "search": {
+    "placeholder": "Search",
+    "popularTerms": "Popular search terms",
+    "terms": {
+      "practiceGroups": "Practice groups",
+      "industrySectors": "Industry sectors",
+      "student": "Student",
+      "vacancies": "Vacancies",
+      "expertise": "Expertise",
+      "news": "News",
+      "aboutUs": "About us"
+    }
+  }
+}

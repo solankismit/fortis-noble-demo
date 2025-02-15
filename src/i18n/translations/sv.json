@@ -1,0 +1,83 @@
+{
+  "header": {
+    "menu": {
+      "about": "Om oss",
+      "services": "Tjänster",
+      "contact": "Kontakt"
+    },
+    "search": "Sök"
+  },
+  "hero": {
+    "title": "Fortis Noble",
+    "subtitle": "Juridisk Excellence & Innovation",
+    "description": "En ledande advokatbyrå med fokus på affärsjuridik och kommersiella ärenden",
+    "ctaButton": "Läs mer"
+  },
+  "expertise": {
+    "title": "Vår Expertis",
+    "description": "Vi erbjuder omfattande juridiska tjänster inom olika verksamhetsområden",
+    "areas": {
+      "corporate": {
+        "title": "Bolagsrätt",
+        "description": "Expert på bolagsstrukturering och styrning"
+      },
+      "litigation": {
+        "title": "Tvistlösning",
+        "description": "Strategisk representation i komplexa juridiska tvister"
+      },
+      "intellectual": {
+        "title": "Immaterialrätt",
+        "description": "Skydd och hantering av immateriella tillgångar"
+      }
+    }
+  },
+  "news": {
+    "title": "Senaste Nytt",
+    "viewAll": "Visa Alla Nyheter",
+    "readMore": "Läs Mer"
+  },
+  "employees": {
+    "title": "Vårt Team",
+    "description": "Möt våra erfarna jurister",
+    "viewProfile": "Visa Profil"
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Mer Fortis Noble?",
+      "description": "Håll dig uppdaterad med våra nyhetsbrev.",
+      "buttonText": "Prenumerera",
+      "placeholder": "Ange din e-post"
+    },
+    "legal": {
+      "contactUs": "Kontakta oss",
+      "terms": "Villkor",
+      "disclaimer": "Ansvarsfriskrivning",
+      "privacy": "Integritetspolicy",
+      "cookies": "Cookie-policy"
+    },
+    "companyInfo": {
+      "name": "2008-2025 © Fortis Noble Advokatbyrå AB med säte i Stockholm",
+      "orgNumber": "Organisationsnummer: 556399-4499",
+      "vatNumber": "Momsnr: SE556399449901"
+    },
+    "social": {
+      "follow": "Följ Oss",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "search": {
+    "placeholder": "Sök",
+    "popularTerms": "Populära söktermer",
+    "terms": {
+      "practiceGroups": "Verksamhetsområden",
+      "industrySectors": "Branschsektorer",
+      "student": "Student",
+      "vacancies": "Lediga tjänster",
+      "expertise": "Expertis",
+      "news": "Nyheter",
+      "aboutUs": "Om oss"
+    }
+  }
+}
