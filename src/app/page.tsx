@@ -21,6 +21,7 @@ export default function Home() {
         )}
       >
         <Hero
+          id="hero-section"
           videoSrc="video.mp4"
           title="Welcome to Fortis Noble"
           button={{

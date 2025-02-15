@@ -1,7 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 interface NavItem {
   text: string;
@@ -170,6 +171,16 @@ export default function Header({ onMenuToggle }: HeaderProps) {
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const footerRef = useRef<Element>(null);
+  const heroRef = useRef<Element>(null);
+
+  const isFooterVisible = useIntersectionObserver(footerRef, {
+    threshold: 0.1,
+  });
+
+  const isHeroIntersecting = useIntersectionObserver(heroRef, {
+    threshold: 0.1,
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -191,6 +202,20 @@ export default function Header({ onMenuToggle }: HeaderProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY, isOpen]);
 
+  useEffect(() => {
+    // Find footer and hero elements
+    const footerElement = document.querySelector("#footer-observer");
+    const heroElement = document.querySelector("#hero-section");
+
+    if (footerElement) footerRef.current = footerElement;
+    if (heroElement) heroRef.current = heroElement;
+  }, []);
+
+  const textColorClass =
+    isFooterVisible || isHeroIntersecting ? "text-white" : "text-black";
+  const bgColorClass =
+    isOpen || isFooterVisible || isHeroIntersecting ? "bg-white" : "bg-black";
+
   const toggleMenu = (state: boolean) => {
     setIsOpen(state);
     onMenuToggle(state);
@@ -202,7 +227,8 @@ export default function Header({ onMenuToggle }: HeaderProps) {
         className={cn(
           "fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent",
           isScrolled && "",
-          isScrollingUp || isOpen ? "translate-y-0" : "-translate-y-full"
+          isScrollingUp || isOpen ? "translate-y-0" : "-translate-y-full",
+          textColorClass
         )}
       >
         <div className="px-[min(50px,7vw)] 2xl:px-[100px] pt-[20px] 2xl:pt-[39px]">
@@ -211,7 +237,10 @@ export default function Header({ onMenuToggle }: HeaderProps) {
             <div className="z-10">
               <Link
                 href="/"
-                className="font-bold text-2xl text-white z-10 leading-[1.07] block isolate text-[1.6rem] xl:text-[2rem] xl:leading-[1.07] 2xl:text-[2.5rem]"
+                className={cn(
+                  "font-bold text-2xl z-10 leading-[1.07] block isolate text-[1.6rem] xl:text-[2rem] xl:leading-[1.07] 2xl:text-[2.5rem]",
+                  textColorClass
+                )}
               >
                 FORTIS NOBLE
               </Link>
@@ -224,7 +253,10 @@ export default function Header({ onMenuToggle }: HeaderProps) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="hover:text-gray-600 font-monument-grotesk text-white text-2xl"
+                    className={cn(
+                      "hover:opacity-70 font-monument-grotesk text-2xl transition-colors duration-300",
+                      textColorClass
+                    )}
                   >
                     {item.text}
                   </Link>
@@ -236,7 +268,8 @@ export default function Header({ onMenuToggle }: HeaderProps) {
                 <button
                   className={cn(
                     "text-[1.6rem] font-monument-grotesk transition-colors",
-                    "text-white/60 hover:text-white"
+                    "text-white/60 hover:text-white",
+                    !isOpen && textColorClass
                   )}
                   onClick={() => setIsSearchOpen(true)}
                 >
@@ -245,7 +278,8 @@ export default function Header({ onMenuToggle }: HeaderProps) {
                 <button
                   className={cn(
                     "text-[1.6rem] font-monument-grotesk transition-colors",
-                    "text-white/60 hover:text-white"
+                    "text-white/60 hover:text-white",
+                    !isOpen && textColorClass
                   )}
                 >
                   {languages.find((lang) => lang.active)?.code}
@@ -277,28 +311,31 @@ export default function Header({ onMenuToggle }: HeaderProps) {
                 >
                   <span
                     className={cn(
-                      "absolute w-full h-[1px] bg-white",
+                      "absolute w-full h-[1px] ",
                       "transition-all duration-300 ease-in-out",
                       "top-0",
                       isOpen && "translate-y-[0.75em] rotate-45",
-                      "lg:[.active&]:translate-y-[0.45em]"
+                      "lg:[.active&]:translate-y-[0.45em]",
+                      bgColorClass
                     )}
                   />
                   <span
                     className={cn(
-                      "absolute w-full h-[1px] bg-white",
+                      "absolute w-full h-[1px] ",
                       "transition-all duration-300 ease-in-out",
                       "top-[calc(50%-1px)]",
-                      isOpen && "opacity-0"
+                      isOpen && "opacity-0",
+                      bgColorClass
                     )}
                   />
                   <span
                     className={cn(
-                      "absolute w-full h-[1px] bg-white",
+                      "absolute w-full h-[1px] ",
                       "transition-all duration-300 ease-in-out",
                       "bottom-0",
                       isOpen && "-translate-y-[0.75em] -rotate-45",
-                      "lg:[.active&]:-translate-y-[0.45em]"
+                      "lg:[.active&]:-translate-y-[0.45em]",
+                      bgColorClass
                     )}
                   />
                 </div>
@@ -330,7 +367,9 @@ export default function Header({ onMenuToggle }: HeaderProps) {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="text-white hover:text-gray-400 transition-colors  text-5xl sm:text-6xl md:text-7xl 2xl:text-8xl block  leading-none"
+                      className={cn(
+                        "hover:text-gray-400 transition-colors text-5xl sm:text-6xl md:text-7xl 2xl:text-8xl block leading-none text-white"
+                      )}
                       onClick={() => toggleMenu(false)}
                     >
                       {item.text}

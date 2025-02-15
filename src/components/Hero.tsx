@@ -5,6 +5,7 @@ interface HeroProps {
   videoSrc?: string;
   imageSrc?: string;
   title: string;
+  id?: string;
   description?: string;
   button?: {
     text: string;
@@ -18,6 +19,7 @@ interface HeroProps {
 export function Hero({
   videoSrc,
   imageSrc,
+  id,
   title,
   description,
   button,
@@ -26,6 +28,7 @@ export function Hero({
 }: HeroProps) {
   return (
     <section
+      id={id}
       className={cn("relative h-screen w-full overflow-hidden", className)}
     >
       <div className="relative h-full">
