@@ -17,10 +17,9 @@ export function OfficeLocations({ offices }: OfficeLocationsProps) {
       <ul
         className={cn(
           "grid grid-cols-6 list-none",
-          "mt-[175px] gap-[min(50px,7vw)]",
+          "gap-[min(50px,7vw)]",
           "sm:grid-cols-2",
-          "2xl:mt-[94px]",
-          "xl:mt-[60px]",
+          "mt-[14vmin] 2xl:mt-[94px] min-[1920px]:mt-[175px]",
           "lg:grid-cols-6 lg:mt-[min(50px,7vw)] lg:gap-y-[calc(min(50px,7vw)*0.5)]",
           "md:grid-cols-2"
         )}
@@ -29,7 +28,7 @@ export function OfficeLocations({ offices }: OfficeLocationsProps) {
           <li
             key={index}
             className={cn(
-              "menu-item relative leading-[1.5] md:leading-[1.15]",
+              " relative leading-[1.5] md:leading-[1.15]",
               "border-r-0",
               " border-[#d8d8d8]",
               "md:[&:nth-child(1)]:border-r md:[&:nth-child(3)]:border-r",
@@ -39,17 +38,19 @@ export function OfficeLocations({ offices }: OfficeLocationsProps) {
             <Link
               href={office.href}
               className={cn(
-                "block font-itc-caslon text-[4.2rem] no-underline",
+                "block font-itc-caslon  no-underline",
                 "hover:text-[#666666]",
-                "xl:text-[3.6rem]",
-                "lg:text-[2.6rem]"
+                "lg:text-[3.6rem]",
+                "text-[2.6rem]",
+                "2xl:text-[4.2rem]",
+                "leading-none"
               )}
             >
               {office.country}
             </Link>
             <ul className="sub-menu mt-[6px] list-none">
               {office.cities.map((city) => (
-                <li key={city} className="menu-item">
+                <li key={city} className=" leading-[1.5]">
                   <Link
                     href={office.href}
                     className={cn(

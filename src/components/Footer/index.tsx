@@ -23,7 +23,7 @@ export function Footer({ className }: FooterProps) {
         )}
       >
         <Section noPadding>
-          <div className="relative w-full py-[40px] xl:pb-[20px] md:pt-[min(50px,7vw)] md:pb-[15px]">
+          <div className="relative w-full pt-[min(50px,7vw)] pb-[15px] md:pb-[20px] xl:pt-[40px] 2xl:pb-[40px]">
             <Newsletter
               title="More Fortis Noble?"
               description="Keep up to date with our newsletters."
@@ -34,8 +34,8 @@ export function Footer({ className }: FooterProps) {
             <OfficeLocations offices={officeLocations} />
 
             <CompanyInfo
-              companyName="2008–2025 © Fortis Noble Advokatbyrå AB with registered office in Stockholm"
-              orgNumber="Organisation number: 556399–4499"
+              companyName="2008-2025 © Fortis Noble Advokatbyrå AB with registered office in Stockholm"
+              orgNumber="Organisation number: 556399-4499"
               vatNumber="Momsnummer (VAT no): SE556399449901"
             />
             <div className="flex flex-col md:flex-row justify-center items-center">
@@ -59,8 +59,8 @@ export function Footer({ className }: FooterProps) {
               </nav>
 
               <ul
-                className="static md:absolute bottom-[40px] right-[0px] flex gap-[10px]
-            xl:bottom-[20px]  md:bottom-[15px]
+                className="static mt-[min(50px,7vw)] md:mt-0 md:absolute right-[0px] flex gap-[14px]
+            bottom-[15px] md:bottom-[20px] 2xl:bottom-[40px]
             "
               >
                 {socialLinks.map((link) => (
@@ -69,7 +69,7 @@ export function Footer({ className }: FooterProps) {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex text-[2em] hover:text-[#666666]"
+                      className="flex text-[1.5em] hover:text-[#666666]"
                       title={link.platform}
                     >
                       {link.icon}
