@@ -16,7 +16,7 @@ export default function Home() {
       <Header onMenuToggle={setIsMenuOpen} />
       <main
         className={cn(
-          "transition-transform duration-300 ease-in-out bg-white text-black",
+          "transition-transform duration-300 ease-in-out bg-white text-black mb-[100svh]",
           isMenuOpen && "-translate-x-full xl:-translate-x-[min(50%,960px)]"
         )}
       >
@@ -49,7 +49,6 @@ export default function Home() {
             target: "_self",
           }}
           noTopShadow
-          className="mb-[100svh]"
         />
       </main>
       <Footer
