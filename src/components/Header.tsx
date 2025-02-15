@@ -313,7 +313,8 @@ export default function Header({ onMenuToggle }: HeaderProps) {
                       "absolute w-full h-[1px] ",
                       "transition-all duration-300 ease-in-out",
                       "top-0",
-                      isOpen && "translate-y-[0.75em] rotate-45",
+                      isOpen &&
+                        "translate-y-[0.45em] xl:translate-y-[0.75em] rotate-45",
                       "lg:[.active&]:translate-y-[0.45em]",
                       bgColorClass
                     )}
@@ -332,7 +333,8 @@ export default function Header({ onMenuToggle }: HeaderProps) {
                       "absolute w-full h-[1px] ",
                       "transition-all duration-300 ease-in-out",
                       "bottom-0",
-                      isOpen && "-translate-y-[0.75em] -rotate-45",
+                      isOpen &&
+                        "-translate-y-[0.45em] xl:-translate-y-[0.75em] -rotate-45",
                       "lg:[.active&]:-translate-y-[0.45em]",
                       bgColorClass
                     )}
