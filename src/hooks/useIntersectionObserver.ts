@@ -2,9 +2,12 @@ import { useEffect, useState, RefObject } from 'react';
 
 export const useIntersectionObserver = (
   elementRef: RefObject<Element | null>,
-  options: IntersectionObserverInit = {}
+  options: IntersectionObserverInit = {
+    threshold: 0.1,
+    rootMargin: '50px'
+  }
 ) => {
-  const [isIntersecting, setIsIntersecting] = useState(false);
+  const [isIntersecting, setIsIntersecting] = useState(true);
 
   useEffect(() => {
     const element = elementRef.current;

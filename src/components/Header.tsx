@@ -167,7 +167,6 @@ const languages: LanguageItem[] = [
 
 export default function Header({ onMenuToggle }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -176,6 +175,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
 
   const isFooterVisible = useIntersectionObserver(footerRef, {
     threshold: 0.1,
+    rootMargin: "50px",
   });
 
   const isHeroIntersecting = useIntersectionObserver(heroRef, {
@@ -189,9 +189,6 @@ export default function Header({ onMenuToggle }: HeaderProps) {
         return;
       }
       const currentScrollY = window.scrollY;
-
-      // Check if scrolled
-      setIsScrolled(currentScrollY > 20);
 
       // Determine scroll direction
       setIsScrollingUp(currentScrollY < lastScrollY);
@@ -225,8 +222,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent",
-          isScrolled && "",
+          "fixed top-0 left-0 w-full z-50 transition-all duration-300",
           isScrollingUp || isOpen || isFooterVisible
             ? "translate-y-0"
             : "-translate-y-full",
@@ -236,12 +232,13 @@ export default function Header({ onMenuToggle }: HeaderProps) {
         <div className="px-[min(50px,7vw)] 2xl:px-[100px] pt-[20px] 2xl:pt-[39px]">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="z-10">
+            <div className="relative z-[2000]">
               <Link
                 href="/"
                 className={cn(
-                  "font-bold text-2xl z-10 leading-[1.07] block isolate text-[1.6rem] xl:text-[2rem] xl:leading-[1.07] 2xl:text-[2.5rem]",
-                  textColorClass
+                  "font-bold text-2xl leading-[1.07] block text-[1.6rem] xl:text-[2rem] xl:leading-[1.07] 2xl:text-[2.5rem]",
+                  "transition-colors duration-300",
+                  isOpen ? "text-white" : textColorClass
                 )}
               >
                 FORTIS NOBLE
@@ -257,7 +254,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
                     href={item.href}
                     className={cn(
                       "hover:opacity-70 font-monument-grotesk text-2xl transition-colors duration-300",
-                      textColorClass
+                      isOpen ? "text-white" : textColorClass
                     )}
                   >
                     {item.text}
@@ -266,12 +263,13 @@ export default function Header({ onMenuToggle }: HeaderProps) {
               </nav>
 
               {/* Language Switcher - Always visible */}
-              <div className="hidden xl:flex items-center gap-[20px] ml-8 z-[1000]">
+              <div className="hidden xl:flex items-center gap-[20px] ml-8 z-[2000]">
                 <button
                   className={cn(
-                    "text-[1.6rem] font-monument-grotesk transition-colors",
-                    "text-white/60 hover:text-white",
-                    !isOpen && textColorClass
+                    "text-[1.6rem] font-monument-grotesk transition-colors duration-300",
+                    isOpen
+                      ? "text-white opacity-60 hover:opacity-100"
+                      : `${textColorClass} opacity-60 hover:opacity-100`
                   )}
                   onClick={() => setIsSearchOpen(true)}
                 >
@@ -279,9 +277,10 @@ export default function Header({ onMenuToggle }: HeaderProps) {
                 </button>
                 <button
                   className={cn(
-                    "text-[1.6rem] font-monument-grotesk transition-colors",
-                    "text-white/60 hover:text-white",
-                    !isOpen && textColorClass
+                    "text-[1.6rem] font-monument-grotesk transition-colors duration-300",
+                    isOpen
+                      ? "text-white opacity-60 hover:opacity-100"
+                      : `${textColorClass} opacity-60 hover:opacity-100`
                   )}
                 >
                   {languages.find((lang) => lang.active)?.code}
@@ -297,18 +296,16 @@ export default function Header({ onMenuToggle }: HeaderProps) {
                   "bg-transparent border-none cursor-pointer",
                   "hover:opacity-70 hover:bg-transparent",
                   "focus:outline-none focus:shadow-none",
-                  "after:content-[''] after:absolute after:top-1/2 after:left-1/2",
-                  "after:w-[50px] after:h-[50px] after:-translate-x-1/2 after:-translate-y-1/2"
+                  "ml-[32px]"
                 )}
                 onClick={() => toggleMenu(!isOpen)}
               >
                 <div
                   className={cn(
                     "relative overflow-hidden",
-                    "h-[2.5rem] w-[5rem] ml-auto",
+                    "h-[1.5rem] w-[3rem] ml-auto",
                     "xl:h-[2.5rem] xl:w-[5rem]",
-                    "flex flex-row flex-wrap items-center",
-                    "lg:h-[1.5rem] lg:w-[3rem]"
+                    "flex flex-row flex-wrap items-center"
                   )}
                 >
                   <span

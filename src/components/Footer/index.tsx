@@ -13,13 +13,12 @@ interface FooterProps {
 
 export function Footer({ className }: FooterProps) {
   return (
-    <div id="footer-observer">
+    <div id="footer-observer" className="relative">
       <footer
         className={cn(
           "fixed inset-0 bg-black text-white -z-10",
           "flex flex-col justify-end",
           "overflow-hidden transition-transform duration-400",
-
           className
         )}
       >
@@ -60,7 +59,7 @@ export function Footer({ className }: FooterProps) {
               </nav>
 
               <ul
-                className="absolute bottom-[40px] right-[0px] flex gap-[10px]
+                className="static md:absolute bottom-[40px] right-[0px] flex gap-[10px]
             xl:bottom-[20px]  md:bottom-[15px]
             "
               >
