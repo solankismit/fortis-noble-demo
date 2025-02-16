@@ -29,18 +29,21 @@ export function Hero({
   return (
     <section
       id={id}
-      className={cn("relative h-[100svh] w-full overflow-hidden", className)}
+      className={cn(
+        "relative h-[100svh] w-full overflow-hidden will-change-transform",
+        className
+      )}
     >
-      <div className="relative h-full">
+      <div className="relative h-full transform-gpu">
         {/* Video or Image - Lower z-index */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 transform-gpu">
           {videoSrc ? (
             <video
               autoPlay
               loop
               muted
               playsInline
-              className="absolute top-0 left-0 w-full h-full object-cover"
+              className="absolute top-0 left-0 w-full h-full object-cover transform-gpu"
             >
               <source src={videoSrc} type="video/mp4" />
               <p>Your browser does not support video playback.</p>
@@ -49,13 +52,13 @@ export function Hero({
             <img
               src={imageSrc}
               alt={title}
-              className="absolute top-0 left-0 w-full h-full object-cover"
+              className="absolute top-0 left-0 w-full h-full object-cover transform-gpu"
             />
           ) : null}
         </div>
 
         {/* Gradients - Middle z-index */}
-        <div className="absolute inset-0 z-10 pointer-events-none">
+        <div className="absolute inset-0 z-10 pointer-events-none transform-gpu">
           {/* Top gradient overlay */}
           {!noTopShadow && (
             <div className="absolute top-0 left-0 w-full h-[120px] bg-gradient-to-b from-black/60 via-black/30 to-transparent" />
@@ -70,7 +73,7 @@ export function Hero({
           title={title}
           description={description}
           button={button}
-          className="z-20"
+          className="z-20 transform-gpu"
         />
       </div>
     </section>

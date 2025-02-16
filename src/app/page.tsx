@@ -18,7 +18,7 @@ export default function Home() {
       <Header onMenuToggle={setIsMenuOpen} />
       <main
         className={cn(
-          "transition-transform duration-300 ease-in-out bg-white text-black mb-[100vh]",
+          "transition-transform duration-300 ease-in-out bg-white text-black mb-[100vh] will-change-transform",
           isMenuOpen && "-translate-x-full xl:-translate-x-[min(50%,960px)]"
         )}
       >
