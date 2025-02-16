@@ -84,7 +84,7 @@ const News = ({ data, ctaButton }: NewsProps) => {
           ))}
         </div>
         <div className="flex justify-center mt-[47px] 2xl:mt-[60px]">
-          <Button href="/news">{ctaButton}</Button>
+          <Button href="#">{ctaButton}</Button>
         </div>
       </div>
     </>

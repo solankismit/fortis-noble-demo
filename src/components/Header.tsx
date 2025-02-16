@@ -32,27 +32,27 @@ function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
       items: [
         {
           text: translations.search.terms.practiceGroups,
-          href: "/?s=Practice+groups",
+          href: "#",
         },
         {
           text: translations.search.terms.industrySectors,
-          href: "/?s=Industry+sectors",
+          href: "#",
         },
       ],
     },
     {
       groupSize: 3,
       items: [
-        { text: translations.search.terms.student, href: "/?s=Student" },
-        { text: translations.search.terms.vacancies, href: "/?s=Vacancies" },
-        { text: translations.search.terms.expertise, href: "/?s=Expertise" },
+        { text: translations.search.terms.student, href: "#" },
+        { text: translations.search.terms.vacancies, href: "#" },
+        { text: translations.search.terms.expertise, href: "#" },
       ],
     },
     {
       groupSize: 2,
       items: [
-        { text: translations.search.terms.news, href: "/?s=News" },
-        { text: translations.search.terms.aboutUs, href: "/?s=About" },
+        { text: translations.search.terms.news, href: "#" },
+        { text: translations.search.terms.aboutUs, href: "#" },
       ],
     },
   ];

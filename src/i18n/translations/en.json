@@ -111,37 +111,37 @@
       {
         "country": "Sweden",
         "cities": ["Stockholm", "Gothenburg", "Malmö"],
-        "href": "/contact/sweden"
+        "href": "#"
       },
       {
         "country": "Belgium",
         "cities": ["Brussels"],
-        "href": "/contact/brussels"
+        "href": "#"
       },
       {
         "country": "Singapore",
         "cities": ["Singapore"],
-        "href": "/contact/singapore"
+        "href": "#"
       },
       {
         "country": "USA",
         "cities": ["New York"],
-        "href": "/contact/usa"
+        "href": "#"
       }
     ],
 
     "legal": [
       {
         "text": "Contact us",
-        "href": "/contact"
+        "href": "#"
       },
       {
         "text": "Terms and conditions",
-        "href": "/terms"
+        "href": "#"
       },
       {
         "text": "Disclaimer",
-        "href": "/disclaimer"
+        "href": "#"
       }
     ],
     "companyInfo": {

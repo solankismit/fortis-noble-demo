@@ -111,36 +111,36 @@
       {
         "country": "Sverige",
         "cities": ["Stockholm", "Göteborg", "Malmö"],
-        "href": "/contact/sweden"
+        "href": "#"
       },
       {
         "country": "Belgien", 
         "cities": ["Bryssel"],
-        "href": "/contact/brussels"
+        "href": "#"
       },
       {
         "country": "Singapore",
         "cities": ["Singapore"],
-        "href": "/contact/singapore"
+        "href": "#"
       },
       {
         "country": "USA",
         "cities": ["New York"],
-        "href": "/contact/usa"
+        "href": "#"
       }
     ],
     "legal": [
       {
         "text": "Kontakta oss",
-        "href": "/contact"
+        "href": "#"
       },
       {
         "text": "Villkor",
-        "href": "/terms"
+        "href": "#"
       },
       {
         "text": "Ansvarsfriskrivning",
-        "href": "/disclaimer"
+        "href": "#"
       }
     ],
     "companyInfo": {

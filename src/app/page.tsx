@@ -28,7 +28,7 @@ export default function Home() {
           title={translations.hero.title}
           button={{
             text: translations.hero.ctaButton,
-            href: "/om-byran",
+            href: "#",
             target: "_self",
           }}
         />
@@ -57,7 +57,7 @@ export default function Home() {
           description={translations.hero2.description}
           button={{
             text: translations.hero2.ctaButton,
-            href: "/om-byran",
+            href: "#",
             target: "_self",
           }}
           noTopShadow

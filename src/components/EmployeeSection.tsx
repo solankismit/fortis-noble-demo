@@ -25,7 +25,7 @@ export default function EmployeesSection({
         <p className="leading-[1.4] block isolate mt-[min(50px,7vw)] md:mt-[27px] ">
           {description}
         </p>
-        <Button href="/employees" className="mt-[min(50px,7vw)] md:mt-[27px]">
+        <Button href="#" className="mt-[min(50px,7vw)] md:mt-[27px]">
           {ctaButton}
         </Button>
       </div>
