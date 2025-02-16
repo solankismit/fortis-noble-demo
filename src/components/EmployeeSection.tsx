@@ -22,7 +22,7 @@ export default function EmployeesSection({
       />
       <div className="col-start-1 col-span-12 md:col-start-7 md:col-span-5">
         <h2 className="font-serif text-black">{title}</h2>
-        <p className="text-[20px] font-serif text-black mt-[min(50px,7vw)] md:mt-[27px] ">
+        <p className="leading-[1.4] block isolate mt-[min(50px,7vw)] md:mt-[27px] ">
           {description}
         </p>
         <Button href="/employees" className="mt-[min(50px,7vw)] md:mt-[27px]">

@@ -38,11 +38,12 @@ export function Footer({
   legalLinks,
 }: FooterProps) {
   return (
-    <div id="footer-observer" className="relative">
+    <div
+      id="footer-observer"
+      className="fixed inset-0 bg-black text-white -z-10 h-screen top-0 flex flex-col justify-end"
+    >
       <footer
         className={cn(
-          "fixed inset-0 bg-black text-white -z-10 min-h-[100dvh] bottom-0",
-          "flex flex-col justify-end",
           "overflow-hidden transition-transform duration-400",
           className
         )}

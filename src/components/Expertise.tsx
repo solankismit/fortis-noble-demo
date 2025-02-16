@@ -11,7 +11,7 @@ const Expertise = ({ description, ctaButton }: ExpertiseProps) => {
     <>
       <div className="grid grid-cols-12  mx-auto gap-[min(50px,7vw)]">
         <div className="col-start-1 col-span-12   min-[1200px]:col-start-3 min-[1200px]:col-span-8">
-          <p className="leading-[33px] block isolate">{description}</p>
+          <p className="leading-[1.4] block isolate">{description}</p>
         </div>
       </div>
       <div className="flex justify-center">
