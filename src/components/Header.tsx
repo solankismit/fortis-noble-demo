@@ -172,8 +172,8 @@ export default function Header({ onMenuToggle }: HeaderProps) {
   const heroRef = useRef<Element>(null);
 
   const isFooterVisible = useIntersectionObserver(footerRef, {
-    threshold: 0.1,
-    rootMargin: "0px",
+    threshold: 0,
+    rootMargin: "0px 0px 100px 0px",
   });
 
   const isHeroIntersecting = useIntersectionObserver(heroRef, {
