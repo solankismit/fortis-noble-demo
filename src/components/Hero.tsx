@@ -29,7 +29,7 @@ export function Hero({
   return (
     <section
       id={id}
-      className={cn("relative h-[100dvh] w-full overflow-hidden", className)}
+      className={cn("relative h-screen w-full overflow-hidden", className)}
     >
       <div className="relative h-full">
         {/* Video or Image - Lower z-index */}
