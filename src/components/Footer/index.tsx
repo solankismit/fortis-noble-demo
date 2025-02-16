@@ -40,7 +40,7 @@ export function Footer({
   return (
     <div
       id="footer-observer"
-      className="fixed inset-0 bg-black text-white -z-10 h-[calc(100vh+100px)] top-0 flex flex-col justify-end"
+      className="fixed inset-0 bg-black text-white -z-10 h-screen top-0 flex flex-col justify-end"
     >
       <footer
         className={cn(
